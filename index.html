@@ -1,1 +1,437 @@
-index.html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KNEN Sneakers - Votre passion, nos maillots</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#222;
+}
+
+header{
+background:#d6001c;
+color:white;
+padding:20px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+header h1{
+font-size:34px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+}
+
+.top{
+background:white;
+padding:15px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+font-weight:bold;
+}
+
+.hero{
+
+background:linear-gradient(135deg,#d6001c,#001d4d);
+
+color:white;
+
+text-align:center;
+
+padding:60px 20px;
+
+}
+
+.hero h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+margin-bottom:30px;
+
+}
+
+.hero button{
+
+background:white;
+
+color:#d6001c;
+
+border:none;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:40px 20px;
+
+}
+
+.section-title{
+
+text-align:center;
+
+font-size:32px;
+
+margin-bottom:40px;
+
+}
+
+.products{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+
+height:340px;
+
+object-fit:cover;
+
+}
+
+.card-content{
+
+padding:20px;
+
+}
+
+.price{
+
+font-size:30px;
+
+font-weight:bold;
+
+color:#d6001c;
+
+margin:15px 0;
+
+}
+
+button.buy{
+
+width:100%;
+
+background:#d6001c;
+
+color:white;
+
+padding:15px;
+
+border:none;
+
+font-size:18px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+.reviews{
+
+margin-top:60px;
+
+}
+
+.review{
+
+background:white;
+
+padding:20px;
+
+border-radius:10px;
+
+margin-bottom:20px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+footer{
+
+background:#001d4d;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>⚽ KNEN Sneakers</h1>
+
+<p>Votre passion, nos maillots</p>
+
+</header>
+
+<div class="top">
+
+<div>⭐ 4,9/5 (127 avis)</div>
+
+<div>🚚 Livraison 48/72h</div>
+
+<div>🔒 Paiement sécurisé PayPal</div>
+
+</div>
+
+<section class="hero">
+
+<h2>Nouvelle Collection LOSC</h2>
+
+<p>Ensemble enfant officiel disponible dès maintenant</p>
+
+<button onclick="document.getElementById('boutique').scrollIntoView({behavior:'smooth'})">
+
+Découvrir
+
+</button>
+
+</section>
+
+<div class="container">
+
+<h2 class="section-title" id="boutique">
+
+Nos meilleures ventes
+
+</h2>
+
+<div class="products">
+<div class="card">
+
+<img src="https://i.imgur.com/7Q4XlY4.jpeg" alt="Ensemble LOSC Enfant">
+
+<div class="card-content">
+
+<h3>Ensemble LOSC Enfant</h3>
+
+<p>
+Maillot + Short + Chaussettes
+</p>
+
+<div class="price">
+39,90 €
+</div>
+
+<p>
+★★★★★ 4,9/5 (127 avis)
+</p>
+
+<button class="buy" onclick="document.getElementById('commande').scrollIntoView({behavior:'smooth'})">
+Commander
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="commande" style="margin-top:60px;background:white;padding:30px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.1);">
+
+<h2 style="text-align:center;margin-bottom:25px;">
+Commander maintenant
+</h2>
+
+<form
+action="https://formsubmit.co/knensneakers@gmail.com"
+method="POST">
+
+<input type="hidden" name="_subject" value="Nouvelle commande KNEN Sneakers">
+
+<input type="hidden" name="_next" value="https://www.paypal.com">
+
+<label>Nom</label><br>
+<input type="text" name="Nom" required style="width:100%;padding:12px;margin:8px 0 20px;"><br>
+
+<label>Prénom</label><br>
+<input type="text" name="Prenom" required style="width:100%;padding:12px;margin:8px 0 20px;"><br>
+
+<label>Email</label><br>
+<input type="email" name="Email" required style="width:100%;padding:12px;margin:8px 0 20px;"><br>
+
+<label>Téléphone</label><br>
+<input type="tel" name="Telephone" required style="width:100%;padding:12px;margin:8px 0 20px;"><br>
+
+<label>Adresse complète</label><br>
+<textarea
+name="Adresse"
+required
+style="width:100%;padding:12px;height:100px;margin:8px 0 20px;"></textarea>
+
+<label>Taille</label><br>
+
+<select
+name="Taille"
+required
+style="width:100%;padding:12px;margin:8px 0 20px;">
+
+<option>4 ans</option>
+<option>6 ans</option>
+<option>8 ans</option>
+<option>10 ans</option>
+<option>12 ans</option>
+<option>14 ans</option>
+
+</select>
+
+<label>Quantité</label><br>
+
+<input
+type="number"
+name="Quantite"
+value="1"
+min="1"
+style="width:100%;padding:12px;margin:8px 0 25px;">
+
+<input
+type="hidden"
+name="Produit"
+value="Ensemble LOSC Enfant">
+
+<button
+class="buy"
+type="submit">
+
+Commander et payer
+
+</button>
+
+</form>
+
+</div>
+<div class="reviews">
+
+<h2 class="section-title">
+Avis de nos clients
+</h2>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+"Très beau maillot, mon fils est ravi. Livraison rapide."
+<br><br>
+<b>— Sophie M.</b>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+"Qualité au top pour le prix. Je recommande."
+<br><br>
+<b>— Julien R.</b>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+"Commande reçue en 2 jours, taille parfaite."
+<br><br>
+<b>— Camille D.</b>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>KNEN Sneakers</h2>
+
+<br>
+
+<p>Votre passion, nos maillots.</p>
+
+<br>
+
+<p>📧 knensneakers@gmail.com</p>
+
+<p>🚚 Livraison 48 à 72 heures</p>
+
+<p>🔒 Paiement sécurisé via PayPal</p>
+
+<br>
+
+<p style="font-size:14px;">
+© 2026 KNEN Sneakers - Tous droits réservés
+</p>
+
+</footer>
+
+</body>
+</html>
+
