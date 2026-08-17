@@ -485,3 +485,55 @@ footer {
     }
 
 }
+/* =========================
+   LIVRAISON
+========================= */
+
+.livraison {
+    margin-top: 22px;
+}
+
+.livraison h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #14284d;
+}
+
+.option-livraison {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px;
+
+    margin: 0 !important;
+
+    border: 1px solid #ddd;
+
+    background: #fff;
+
+    font-weight: normal !important;
+}
+
+.option-livraison:first-of-type {
+    border-radius: 8px 8px 0 0;
+}
+
+.option-livraison:last-of-type {
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+}
+
+.option-livraison input {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.option-livraison span {
+    flex: 1;
+}
+
+.option-livraison strong {
+    white-space: nowrap;
+}
