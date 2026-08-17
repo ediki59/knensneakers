@@ -25,6 +25,7 @@
         <a href="#">Accueil</a>
         <a href="#">Maillots</a>
         <a href="#">Contact</a>
+        <a href="#">🛒</a>
     </nav>
 
 </header>
@@ -41,8 +42,7 @@
         <h1>Maillot rétro 2016/2017</h1>
 
         <p>
-            Livraison à partir du
-            <strong>1er septembre 2026</strong>
+            Découvrez nos maillots rétro
         </p>
 
     </div>
@@ -54,7 +54,7 @@
 
 <section class="banniere-secondaire">
 
-    <span class="badge">NOUVELLE COLLECTION</span>
+    <span class="badge">🏷️ NOUVELLE COLLECTION</span>
 
     <p>Découvrez nos maillots rétro</p>
 
@@ -89,17 +89,12 @@
             39,90 €
         </div>
 
-        <div class="disponible">
-            🔥 Disponible
-        </div>
 
-        <p class="livraison">
-            📦 Livraison à partir du
-            <strong>1er septembre 2026</strong>
-        </p>
+        <!-- TAILLE -->
 
-
-        <label for="taille">Taille</label>
+        <label for="taille">
+            Taille
+        </label>
 
         <select id="taille">
 
@@ -112,9 +107,14 @@
         </select>
 
 
+        <!-- FLOÇAGE -->
+
         <label class="flocage">
 
-            <input type="checkbox" id="flocage">
+            <input
+                type="checkbox"
+                id="flocage"
+            >
 
             Ajouter un flocage personnalisé
             <strong>(+1 €)</strong>
@@ -139,17 +139,71 @@
         </div>
 
 
-        <div class="total">
+        <!-- LIVRAISON -->
 
-            Total :
-            <strong id="prixFinal">39,90 €</strong>
+        <div class="livraison">
+
+            <h3>Livraison</h3>
+
+            <label class="option-livraison">
+
+                <input
+                    type="radio"
+                    name="livraison"
+                    value="0"
+                    checked
+                >
+
+                <span>
+                    Livraison standard
+                </span>
+
+                <strong>
+                    Gratuite
+                </strong>
+
+            </label>
+
+
+            <label class="option-livraison">
+
+                <input
+                    type="radio"
+                    name="livraison"
+                    value="3.90"
+                >
+
+                <span>
+                    Livraison express (4 jours)
+                </span>
+
+                <strong>
+                    3,90 €
+                </strong>
+
+            </label>
 
         </div>
 
 
+        <!-- TOTAL -->
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <strong id="prixFinal">
+                39,90 €
+            </strong>
+
+        </div>
+
+
+        <!-- BOUTON -->
+
         <button id="commander">
 
-            🛒 COMMANDER
+            🛒 AJOUTER AU PANIER
 
         </button>
 
