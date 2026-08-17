@@ -1,102 +1,62 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const prixBase = 39.90;
+    const prixFlocage = 1.00;
+    const prixLivraisonExpress = 3.90;
+
     const flocage = document.getElementById("flocage");
     const zoneFlocage = document.getElementById("zoneFlocage");
+    const livraison = document.getElementById("livraison");
     const prixFinal = document.getElementById("prixFinal");
-
-    const livraisons = document.querySelectorAll(
-        'input[name="livraison"]'
-    );
-
-    const PRIX_MAILLOT = 39.90;
-    const PRIX_FLOCAGE = 1.00;
-    const PRIX_EXPRESS = 3.90;
-
 
     function mettreAJourPrix() {
 
-        let total = PRIX_MAILLOT;
+        let total = prixBase;
 
-
-        // +1 € si flocage
-
-        if (flocage.checked) {
-            total += PRIX_FLOCAGE;
+        // Flocage +1 €
+        if (flocage && flocage.checked) {
+            total += prixFlocage;
         }
 
-
-        // +3,90 € si livraison express
-
-        const livraisonExpress =
-            document.querySelector(
-                'input[name="livraison"][value="3.90"]:checked'
-            );
-
-        if (livraisonExpress) {
-            total += PRIX_EXPRESS;
+        // Livraison express +3,90 €
+        if (livraison && livraison.value === "3.90") {
+            total += prixLivraisonExpress;
         }
 
-
-        // Affichage du prix
-
+        // Affichage
         prixFinal.textContent =
             total.toFixed(2).replace(".", ",") + " €";
     }
 
 
     // Flocage
+    if (flocage) {
 
-    flocage.addEventListener("change", function () {
+        flocage.addEventListener("change", function () {
 
-        if (flocage.checked) {
+            if (this.checked) {
+                zoneFlocage.style.display = "flex";
+            } else {
+                zoneFlocage.style.display = "none";
+            }
 
-            zoneFlocage.classList.add("active");
+            mettreAJourPrix();
+        });
 
-        } else {
-
-            zoneFlocage.classList.remove("active");
-
-        }
-
-        mettreAJourPrix();
-
-    });
+    }
 
 
     // Livraison
+    if (livraison) {
 
-    livraisons.forEach(function (radio) {
-
-        radio.addEventListener("change", function () {
-
+        livraison.addEventListener("change", function () {
             mettreAJourPrix();
-
         });
 
-    });
-
-
-    // Prix initial
-
-    mettreAJourPrix();
-
-});
-const ouvrirAvis = document.getElementById("ouvrirAvis");
-const avisModal = document.getElementById("avisModal");
-const fermerAvis = document.getElementById("fermerAvis");
-
-ouvrirAvis.addEventListener("click", function () {
-    avisModal.classList.add("active");
-});
-
-fermerAvis.addEventListener("click", function () {
-    avisModal.classList.remove("active");
-});
-
-avisModal.addEventListener("click", function (event) {
-
-    if (event.target === avisModal) {
-        avisModal.classList.remove("active");
     }
+
+
+    // Prix au chargement
+    mettreAJourPrix();
 
 });
