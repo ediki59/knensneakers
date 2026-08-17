@@ -81,3 +81,22 @@ document.addEventListener("DOMContentLoaded", function () {
     mettreAJourPrix();
 
 });
+const ouvrirAvis = document.getElementById("ouvrirAvis");
+const avisModal = document.getElementById("avisModal");
+const fermerAvis = document.getElementById("fermerAvis");
+
+ouvrirAvis.addEventListener("click", function () {
+    avisModal.classList.add("active");
+});
+
+fermerAvis.addEventListener("click", function () {
+    avisModal.classList.remove("active");
+});
+
+avisModal.addEventListener("click", function (event) {
+
+    if (event.target === avisModal) {
+        avisModal.classList.remove("active");
+    }
+
+});
