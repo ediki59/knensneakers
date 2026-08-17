@@ -1,74 +1,83 @@
-const flocage = document.getElementById("flocage");
-const zoneFlocage = document.getElementById("zoneFlocage");
+document.addEventListener("DOMContentLoaded", function () {
 
-const prixFinal = document.getElementById("prixFinal");
+    const flocage = document.getElementById("flocage");
+    const zoneFlocage = document.getElementById("zoneFlocage");
+    const prixFinal = document.getElementById("prixFinal");
 
-const livraisons = document.querySelectorAll(
-    'input[name="livraison"]'
-);
+    const livraisons = document.querySelectorAll(
+        'input[name="livraison"]'
+    );
 
-const prixBase = 39.90;
-const prixFlocage = 1.00;
-const prixExpress = 3.90;
+    const PRIX_MAILLOT = 39.90;
+    const PRIX_FLOCAGE = 1.00;
+    const PRIX_EXPRESS = 3.90;
 
 
-function calculerTotal() {
+    function mettreAJourPrix() {
 
-    let total = prixBase;
+        let total = PRIX_MAILLOT;
+
+
+        // +1 € si flocage
+
+        if (flocage.checked) {
+            total += PRIX_FLOCAGE;
+        }
+
+
+        // +3,90 € si livraison express
+
+        const livraisonExpress =
+            document.querySelector(
+                'input[name="livraison"][value="3.90"]:checked'
+            );
+
+        if (livraisonExpress) {
+            total += PRIX_EXPRESS;
+        }
+
+
+        // Affichage du prix
+
+        prixFinal.textContent =
+            total.toFixed(2).replace(".", ",") + " €";
+    }
 
 
     // Flocage
 
-    if (flocage.checked) {
-        total += prixFlocage;
-    }
+    flocage.addEventListener("change", function () {
+
+        if (flocage.checked) {
+
+            zoneFlocage.classList.add("active");
+
+        } else {
+
+            zoneFlocage.classList.remove("active");
+
+        }
+
+        mettreAJourPrix();
+
+    });
 
 
     // Livraison
 
-    const livraisonSelectionnee =
-        document.querySelector(
-            'input[name="livraison"]:checked'
-        );
+    livraisons.forEach(function (radio) {
 
-    if (
-        livraisonSelectionnee &&
-        livraisonSelectionnee.value === "3.90"
-    ) {
-        total += prixExpress;
-    }
+        radio.addEventListener("change", function () {
+
+            mettreAJourPrix();
+
+        });
+
+    });
 
 
-    prixFinal.textContent =
-        total.toFixed(2).replace(".", ",") + " €";
-}
+    // Prix initial
 
-
-flocage.addEventListener("change", function () {
-
-    if (flocage.checked) {
-
-        zoneFlocage.classList.add("active");
-
-    } else {
-
-        zoneFlocage.classList.remove("active");
-
-    }
-
-    calculerTotal();
+    mettreAJourPrix();
 
 });
-
-
-livraisons.forEach(function (livraison) {
-
-    livraison.addEventListener(
-        "change",
-        calculerTotal
-    );
-
-});
-
-
-calculerTotal();
