@@ -1,126 +1,172 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KNEN SNEAKERS — Maillots rétro</title>
-    <meta name="description" content="KNEN SNEAKERS — Maillots de football rétro en précommande.">
+
+    <title>SO-KIT — Maillots rétro</title>
+
+    <meta name="description" content="SO-KIT — Maillots rétro de football">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
 <header class="header">
- <div class="logo">
-    <img src="images/logo (2).png" alt="So Kit">
-    <p>Maillots rétro • Précommandes</p>
-</div>
+
+    <div class="logo">
+        <img src="images/logo (2).png" alt="SO-KIT">
+        <p>Maillots rétro</p>
+    </div>
+
+    <nav class="navigation">
+        <a href="#">Accueil</a>
+        <a href="#">Maillots</a>
+        <a href="#">Contact</a>
+    </nav>
+
 </header>
-<main>
-    <section class="banniere">
-        <p class="sur-titre">⚽ COLLECTION RÉTRO</p>
-        <h2>Maillot rétro 2016/2017</h2>
+
+
+<!-- GRANDE BANNIÈRE -->
+
+<section class="banniere-principale">
+
+    <div class="banniere-contenu">
+
+        <span class="badge">⚽ COLLECTION RÉTRO</span>
+
+        <h1>Maillot rétro 2016/2017</h1>
+
         <p>
-            Précommande ouverte • Livraison à partir du
+            Livraison à partir du
             <strong>1er septembre 2026</strong>
         </p>
-    </section>
-    <section class="produit">
-        <div class="photo">
-            <img
-                src="images/IMG_3039.jpeg"
-                alt="Maillot rétro 2016/2017"
-            >
-        </div>
-        <div class="infos">
-            <div class="note">
-                ⭐⭐⭐⭐⭐
-                <strong>4,8/5</strong>
-                <span>(46 avis)</span>
-            </div>
-            <h2>Maillot rétro 2016/2017</h2>
-            <p class="prix">39,90 €</p>
-            <p class="stock">
-                🔥 Précommande ouverte
-            </p>
-            <p class="livraison">
-                📦 Livraison prévue à partir du
-                <strong>1er septembre 2026</strong>
-            </p>
-            <div class="choix">
-                <label for="taille">
-                    Taille
-                </label>
-                <select id="taille">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                </select>
-            </div>
-            <div class="flocage">
-                <label class="checkbox">
-                    <input type="checkbox" id="flocage">
-                    <span>
-                        Ajouter un flocage personnalisé
-                        <strong>(+1 €)</strong>
-                    </span>
-                </label>
-                <div id="zoneFlocage" class="zone-flocage">
-                    <input
-                        type="text"
-                        id="nomFlocage"
-                        placeholder="Nom"
-                        maxlength="15"
-                    >
-                    <input
-                        type="number"
-                        id="numeroFlocage"
-                        placeholder="Numéro"
-                        min="0"
-                        max="99"
-                    >
-                </div>
-            </div>
-            <div class="total">
-                <span>Total</span>
-                <strong id="prixFinal">
-                    39,90 €
-                </strong>
-            </div>
-            <button id="commander" type="button">
-                🛒 PRÉCOMMANDER
-            </button>
-            <p class="securite">
-                🔒 Paiement sécurisé • Livraison suivie
-            </p>
-        </div>
-    </section>
-    <section class="avantages">
-        <div>
-            <span>📦</span>
-            <strong>Livraison suivie</strong>
-            <p>Expédition avec suivi</p>
-        </div>
-        <div>
-            <span>⚡</span>
-            <strong>Précommande</strong>
-            <p>Réservez votre maillot</p>
-        </div>
-        <div>
-            <span>⭐</span>
-            <strong>Qualité</strong>
-            <p>Maillots soigneusement sélectionnés</p>
-        </div>
-    </section>
-</main>
-<footer class="footer">
-    <h3>KNEN SNEAKERS</h3>
-    <p>Votre passion, nos maillots.</p>
-    <p class="copyright">
-        © 2026 KNEN SNEAKERS — Tous droits réservés
-    </p>
-</footer>
-<script src="js/app.js"></script>
-</body>
-</html>
 
+    </div>
+
+</section>
+
+
+<!-- PETITE BANNIÈRE -->
+
+<section class="banniere-secondaire">
+
+    <span class="badge">NOUVELLE COLLECTION</span>
+
+    <p>Découvrez nos maillots rétro</p>
+
+</section>
+
+
+<!-- PRODUIT -->
+
+<main class="produit">
+
+    <div class="photo">
+
+        <img
+            src="images/IMG_3039.jpeg"
+            alt="Maillot rétro 2016/2017"
+        >
+
+    </div>
+
+
+    <div class="infos">
+
+        <div class="note">
+            ⭐⭐⭐⭐⭐
+            <strong>4,8/5</strong>
+            <span>(46 avis)</span>
+        </div>
+
+        <h2>Maillot rétro 2016/2017</h2>
+
+        <div class="prix">
+            39,90 €
+        </div>
+
+        <div class="disponible">
+            🔥 Disponible
+        </div>
+
+        <p class="livraison">
+            📦 Livraison à partir du
+            <strong>1er septembre 2026</strong>
+        </p>
+
+
+        <label for="taille">Taille</label>
+
+        <select id="taille">
+
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+
+        </select>
+
+
+        <label class="flocage">
+
+            <input type="checkbox" id="flocage">
+
+            Ajouter un flocage personnalisé
+            <strong>(+1 €)</strong>
+
+        </label>
+
+
+        <div id="zoneFlocage">
+
+            <input
+                type="text"
+                id="nom"
+                placeholder="Nom"
+            >
+
+            <input
+                type="number"
+                id="numero"
+                placeholder="Numéro"
+            >
+
+        </div>
+
+
+        <div class="total">
+
+            Total :
+            <strong id="prixFinal">39,90 €</strong>
+
+        </div>
+
+
+        <button id="commander">
+
+            🛒 COMMANDER
+
+        </button>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>© 2026 SO-KIT — Maillots rétro</p>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
