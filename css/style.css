@@ -537,3 +537,138 @@ footer {
 .option-livraison strong {
     white-space: nowrap;
 }
+/* =========================
+   AVIS
+========================= */
+
+.note {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+
+    color: #e5a900;
+
+    font-size: 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-bottom: 15px;
+}
+
+.note:hover {
+    text-decoration: underline;
+}
+
+.note strong {
+    color: #14284d;
+}
+
+.note span {
+    color: #777;
+}
+
+
+/* FENÊTRE AVIS */
+
+.avis-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.55);
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.avis-modal.active {
+    display: flex;
+}
+
+.avis-contenu {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+
+    color: #14284d;
+}
+
+.avis-contenu h2 {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+}
+
+.note-grande {
+    color: #e5a900;
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.note-grande strong {
+    color: #14284d;
+}
+
+.fermer-avis {
+    position: absolute;
+
+    right: 15px;
+    top: 12px;
+
+    border: none;
+
+    background: #f1f1f1;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.avis {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.avis strong {
+    color: #e5a900;
+}
+
+.avis p {
+    margin: 7px 0;
+
+    color: #333;
+}
+
+.avis small {
+    color: #888;
+}
