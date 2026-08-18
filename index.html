@@ -2,36 +2,21 @@
 <html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SO-KIT — Maillots rétro</title>
 
     <meta name="description"
           content="SO-KIT — Maillots de football rétro">
 
-    <link rel="stylesheet"
-          href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-
-    <!-- =========================
-         PAYPAL
-    ========================= -->
-
+    <!-- PAYPAL -->
     <script src="https://www.paypal.com/sdk/js?client-id=AbcVKpAm89gERnzfTr4r_-N3Wv5Iv2PBHeWSxKhdKhC8z4l_2eL1R6d8euMZJy55dCIA2dLX3KVcYMmp&currency=EUR"></script>
-
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header class="header">
 
@@ -48,10 +33,6 @@
 </header>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <nav class="navigation">
 
     <a href="#">Accueil</a>
@@ -65,10 +46,6 @@
 
 <main>
 
-
-<!-- =========================
-     PREMIÈRE BANNIÈRE
-========================= -->
 
 <section class="banniere banniere-principale">
 
@@ -87,10 +64,6 @@
 </section>
 
 
-<!-- =========================
-     DEUXIÈME BANNIÈRE
-========================= -->
-
 <section class="banniere-secondaire">
 
     <span>
@@ -108,16 +81,8 @@
 </section>
 
 
-<!-- =========================
-     PRODUIT
-========================= -->
+<section class="produit" id="produit">
 
-<section
-    class="produit"
-    id="produit">
-
-
-    <!-- PHOTO -->
 
     <div class="photo">
 
@@ -128,12 +93,8 @@
     </div>
 
 
-    <!-- INFORMATIONS -->
-
     <div class="infos">
 
-
-        <!-- AVIS CLIQUABLES -->
 
         <button
             class="note"
@@ -153,30 +114,20 @@
         </button>
 
 
-        <!-- TITRE -->
-
         <h2>
             Maillot rétro 2026/2027
         </h2>
 
-
-        <!-- PRIX -->
 
         <p class="prix">
             39,90 €
         </p>
 
 
-        <!-- DISPONIBILITÉ -->
-
         <p class="stock">
             🔥 Disponible
         </p>
 
-
-        <!-- =========================
-             TAILLE
-        ========================= -->
 
         <label for="taille">
             Taille
@@ -184,32 +135,18 @@
 
         <select id="taille">
 
-            <option value="S">
-                S
-            </option>
+            <option value="S">S</option>
 
-            <option value="M">
-                M
-            </option>
+            <option value="M">M</option>
 
-            <option value="L">
-                L
-            </option>
+            <option value="L">L</option>
 
-            <option value="XL">
-                XL
-            </option>
+            <option value="XL">XL</option>
 
-            <option value="XXL">
-                XXL
-            </option>
+            <option value="XXL">XXL</option>
 
         </select>
 
-
-        <!-- =========================
-             FLOCCAGE
-        ========================= -->
 
         <div class="option">
 
@@ -227,8 +164,6 @@
         </div>
 
 
-        <!-- ZONE FLOCCAGE -->
-
         <div
             id="zoneFlocage"
             class="zone-flocage">
@@ -245,10 +180,6 @@
 
         </div>
 
-
-        <!-- =========================
-             LIVRAISON
-        ========================= -->
 
         <div class="livraison">
 
@@ -271,10 +202,6 @@
         </div>
 
 
-        <!-- =========================
-             TOTAL
-        ========================= -->
-
         <div class="total">
 
             <span>
@@ -287,10 +214,6 @@
 
         </div>
 
-
-        <!-- =========================
-             PAYPAL
-        ========================= -->
 
         <div class="paiement">
 
@@ -307,10 +230,6 @@
 
 </section>
 
-
-<!-- =========================
-     AVIS
-========================= -->
 
 <div
     id="avisModal"
@@ -445,13 +364,7 @@
 </div>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-    id="contact"
-    class="contact">
+<section id="contact" class="contact">
 
     <h2>
         SO-KIT
@@ -466,10 +379,6 @@
 
 </main>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
@@ -509,9 +418,6 @@ document.addEventListener(
 
             let total = prixBase;
 
-
-            /* FLOCCAGE */
-
             if (
                 flocage &&
                 flocage.checked
@@ -520,9 +426,6 @@ document.addEventListener(
                 total += prixFlocage;
 
             }
-
-
-            /* AFFICHAGE */
 
             prixFinal.textContent =
                 total
@@ -543,10 +446,7 @@ document.addEventListener(
                 "change",
                 function () {
 
-
-                    if (
-                        this.checked
-                    ) {
+                    if (this.checked) {
 
                         zoneFlocage.style.display =
                             "flex";
@@ -558,7 +458,6 @@ document.addEventListener(
 
                     }
 
-
                     mettreAJourPrix();
 
                 }
@@ -567,10 +466,6 @@ document.addEventListener(
         }
 
 
-        /* =========================
-           ZONE FLOCCAGE CACHÉE
-        ========================= */
-
         if (zoneFlocage) {
 
             zoneFlocage.style.display =
@@ -578,10 +473,6 @@ document.addEventListener(
 
         }
 
-
-        /* =========================
-           PRIX INITIAL
-        ========================= */
 
         mettreAJourPrix();
 
@@ -606,8 +497,6 @@ document.addEventListener(
             );
 
 
-        /* OUVRIR */
-
         if (
             ouvrirAvis &&
             avisModal
@@ -627,8 +516,6 @@ document.addEventListener(
         }
 
 
-        /* FERMER */
-
         if (
             fermerAvis &&
             avisModal
@@ -647,8 +534,6 @@ document.addEventListener(
 
         }
 
-
-        /* CLIQUER EN DEHORS */
 
         if (avisModal) {
 
@@ -671,8 +556,6 @@ document.addEventListener(
 
         }
 
-
-        /* ESC */
 
         document.addEventListener(
             "keydown",
@@ -730,12 +613,9 @@ document.addEventListener(
                         actions
                     ) {
 
-
                         let total =
                             prixBase;
 
-
-                        /* FLOCCAGE */
 
                         if (
                             flocage &&
@@ -778,6 +658,7 @@ document.addEventListener(
 
                 /* =========================
                    PAIEMENT ACCEPTÉ
+                   + ENVOI GOOGLE SHEETS
                 ========================= */
 
                 onApprove:
@@ -785,7 +666,6 @@ document.addEventListener(
                         data,
                         actions
                     ) {
-
 
                         return actions.order
                             .capture()
@@ -795,14 +675,170 @@ document.addEventListener(
                                 ) {
 
 
+                                    /* =========================
+                                       RÉCUPÉRATION INFORMATIONS
+                                    ========================= */
+
+                                    const taille =
+                                        document.getElementById(
+                                            "taille"
+                                        ).value || "";
+
+
+                                    const livraison =
+                                        document.getElementById(
+                                            "livraison"
+                                        ).value === "0"
+                                            ? "Standard"
+                                            : document.getElementById(
+                                                "livraison"
+                                              ).value;
+
+
+                                    let flocageInfo =
+                                        "Aucun";
+
+
+                                    if (
+                                        flocage &&
+                                        flocage.checked
+                                    ) {
+
+                                        const nom =
+                                            document.getElementById(
+                                                "nomFlocage"
+                                            ).value || "";
+
+                                        const numero =
+                                            document.getElementById(
+                                                "numeroFlocage"
+                                            ).value || "";
+
+
+                                        flocageInfo =
+                                            "Nom : " +
+                                            nom +
+                                            " / Numéro : " +
+                                            numero;
+
+                                    }
+
+
+                                    /* =========================
+                                       MONTANT
+                                    ========================= */
+
+                                    let montant =
+                                        prixBase;
+
+
+                                    if (
+                                        flocage &&
+                                        flocage.checked
+                                    ) {
+
+                                        montant +=
+                                            prixFlocage;
+
+                                    }
+
+
+                                    /* =========================
+                                       NUMÉRO COMMANDE
+                                    ========================= */
+
+                                    const numeroCommande =
+                                        "SK-" +
+                                        Date.now();
+
+
+                                    /* =========================
+                                       EMAIL PAYPAL
+                                    ========================= */
+
+                                    const email =
+                                        details.payer &&
+                                        details.payer.email_address
+                                            ? details.payer.email_address
+                                            : "";
+
+
+                                    /* =========================
+                                       DONNÉES COMMANDE
+                                    ========================= */
+
+                                    const commande = {
+
+                                        commande:
+                                            numeroCommande,
+
+                                        email:
+                                            email,
+
+                                        taille:
+                                            taille,
+
+                                        flocage:
+                                            flocageInfo,
+
+                                        livraison:
+                                            livraison,
+
+                                        montant:
+                                            montant.toFixed(2) +
+                                            " €",
+
+                                        statut:
+                                            "Paiement reçu"
+
+                                    };
+
+
+                                    /* =========================
+                                       ENVOI GOOGLE SHEETS
+                                    ========================= */
+
+                                    fetch(
+                                        "https://script.google.com/macros/s/AKfycby6K7pXjRjdmvAFzD0aretefH2nNtZ8iTFK3BV9ikQ7z-gckkVOCt3dJ14yUEfNPyeV/exec",
+                                        {
+
+                                            method:
+                                                "POST",
+
+                                            mode:
+                                                "no-cors",
+
+                                            headers: {
+
+                                                "Content-Type":
+                                                    "text/plain;charset=utf-8"
+
+                                            },
+
+                                            body:
+                                                JSON.stringify(
+                                                    commande
+                                                )
+
+                                        }
+                                    );
+
+
+                                    /* =========================
+                                       CONFIRMATION
+                                    ========================= */
+
                                     alert(
-                                        "Paiement effectué avec succès ! Merci pour votre commande."
+                                        "Paiement effectué avec succès !\n\n" +
+                                        "Merci pour votre commande.\n\n" +
+                                        "Numéro de commande : " +
+                                        numeroCommande
                                     );
 
 
                                     console.log(
-                                        "Commande PayPal :",
-                                        details
+                                        "Commande envoyée :",
+                                        commande
                                     );
 
 
@@ -833,12 +869,10 @@ document.addEventListener(
                 onError:
                     function (err) {
 
-
                         console.error(
                             "Erreur PayPal :",
                             err
                         );
-
 
                         alert(
                             "Une erreur est survenue avec PayPal."
@@ -853,11 +887,9 @@ document.addEventListener(
 
         } else {
 
-
             console.error(
                 "PayPal SDK non chargé."
             );
-
 
         }
 
