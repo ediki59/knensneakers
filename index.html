@@ -16,7 +16,11 @@
     <link rel="stylesheet"
           href="css/style.css">
 
-    <!-- PAYPAL -->
+
+    <!-- =========================
+         PAYPAL
+    ========================= -->
+
     <script src="https://www.paypal.com/sdk/js?client-id=AbcVKpAm89gERnzfTr4r_-N3Wv5Iv2PBHeWSxKhdKhC8z4l_2eL1R6d8euMZJy55dCIA2dLX3KVcYMmp&currency=EUR"></script>
 
 </head>
@@ -25,9 +29,9 @@
 <body>
 
 
-<!-- =========================================
+<!-- =========================
      HEADER
-========================================= -->
+========================= -->
 
 <header class="header">
 
@@ -44,9 +48,9 @@
 </header>
 
 
-<!-- =========================================
+<!-- =========================
      NAVIGATION
-========================================= -->
+========================= -->
 
 <nav class="navigation">
 
@@ -62,9 +66,9 @@
 <main>
 
 
-<!-- =========================================
-     BANNIÈRE PRINCIPALE
-========================================= -->
+<!-- =========================
+     PREMIÈRE BANNIÈRE
+========================= -->
 
 <section class="banniere banniere-principale">
 
@@ -83,9 +87,9 @@
 </section>
 
 
-<!-- =========================================
+<!-- =========================
      DEUXIÈME BANNIÈRE
-========================================= -->
+========================= -->
 
 <section class="banniere-secondaire">
 
@@ -104,9 +108,9 @@
 </section>
 
 
-<!-- =========================================
+<!-- =========================
      PRODUIT
-========================================= -->
+========================= -->
 
 <section
     class="produit"
@@ -119,7 +123,7 @@
 
         <img
             src="images/IMG_3039.jpeg"
-            alt="Maillot rétro 2016/2017">
+            alt="Maillot rétro 2026/2027">
 
     </div>
 
@@ -129,7 +133,7 @@
     <div class="infos">
 
 
-        <!-- AVIS -->
+        <!-- AVIS CLIQUABLES -->
 
         <button
             class="note"
@@ -152,7 +156,7 @@
         <!-- TITRE -->
 
         <h2>
-            Maillot rétro 2016/2017
+            Maillot rétro 2026/2027
         </h2>
 
 
@@ -170,9 +174,9 @@
         </p>
 
 
-        <!-- =====================================
+        <!-- =========================
              TAILLE
-        ====================================== -->
+        ========================= -->
 
         <label for="taille">
             Taille
@@ -180,22 +184,32 @@
 
         <select id="taille">
 
-            <option value="S">S</option>
+            <option value="S">
+                S
+            </option>
 
-            <option value="M">M</option>
+            <option value="M">
+                M
+            </option>
 
-            <option value="L">L</option>
+            <option value="L">
+                L
+            </option>
 
-            <option value="XL">XL</option>
+            <option value="XL">
+                XL
+            </option>
 
-            <option value="XXL">XXL</option>
+            <option value="XXL">
+                XXL
+            </option>
 
         </select>
 
 
-        <!-- =====================================
+        <!-- =========================
              FLOCCAGE
-        ====================================== -->
+        ========================= -->
 
         <div class="option">
 
@@ -232,9 +246,9 @@
         </div>
 
 
-        <!-- =====================================
+        <!-- =========================
              LIVRAISON
-        ====================================== -->
+        ========================= -->
 
         <div class="livraison">
 
@@ -244,7 +258,7 @@
 
             <select id="livraison">
 
-                <option value="Standard">
+                <option value="0">
                     Livraison standard — offerte
                 </option>
 
@@ -257,9 +271,9 @@
         </div>
 
 
-        <!-- =====================================
+        <!-- =========================
              TOTAL
-        ====================================== -->
+        ========================= -->
 
         <div class="total">
 
@@ -274,361 +288,37 @@
         </div>
 
 
-        <!-- =====================================
-             BOUTON CONTINUER
-        ====================================== -->
+        <!-- =========================
+             PAYPAL
+        ========================= -->
 
-        <button
-            type="button"
-            id="continuerLivraison"
-            class="btn-commander">
+        <div class="paiement">
 
-            CONTINUER
+            <p>
+                💳 Paiement sécurisé par PayPal
+            </p>
 
-        </button>
+            <div id="paypal-button-container"></div>
 
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     INFORMATIONS DE LIVRAISON
-========================================= -->
-
-<section
-    id="sectionLivraison"
-    class="section-livraison"
-    style="display:none;">
-
-    <div class="infos-livraison">
-
-        <h2>
-            📦 Informations de livraison
-        </h2>
-
-        <p>
-            Renseignez vos coordonnées pour recevoir votre commande.
-        </p>
-
-
-        <form id="formLivraison">
-
-
-            <!-- PRÉNOM -->
-
-            <label for="prenom">
-                Prénom *
-            </label>
-
-            <input
-                type="text"
-                id="prenom"
-                name="prenom"
-                autocomplete="given-name"
-                required>
-
-
-            <!-- NOM -->
-
-            <label for="nom">
-                Nom *
-            </label>
-
-            <input
-                type="text"
-                id="nom"
-                name="nom"
-                autocomplete="family-name"
-                required>
-
-
-            <!-- EMAIL -->
-
-            <label for="email">
-                Adresse e-mail *
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                name="email"
-                autocomplete="email"
-                required>
-
-
-            <!-- TELEPHONE -->
-
-            <label for="telephone">
-                Téléphone *
-            </label>
-
-            <input
-                type="tel"
-                id="telephone"
-                name="telephone"
-                autocomplete="tel"
-                required>
-
-
-            <!-- ADRESSE -->
-
-            <label for="adresse">
-                Adresse *
-            </label>
-
-            <input
-                type="text"
-                id="adresse"
-                name="adresse"
-                autocomplete="street-address"
-                required>
-
-
-            <!-- COMPLEMENT -->
-
-            <label for="complement">
-                Complément d'adresse
-            </label>
-
-            <input
-                type="text"
-                id="complement"
-                name="complement"
-                autocomplete="address-line2"
-                placeholder="Appartement, bâtiment...">
-
-
-            <!-- CODE POSTAL -->
-
-            <label for="codePostal">
-                Code postal *
-            </label>
-
-            <input
-                type="text"
-                id="codePostal"
-                name="codePostal"
-                autocomplete="postal-code"
-                required>
-
-
-            <!-- VILLE -->
-
-            <label for="ville">
-                Ville *
-            </label>
-
-            <input
-                type="text"
-                id="ville"
-                name="ville"
-                autocomplete="address-level2"
-                required>
-
-
-            <!-- PAYS -->
-
-            <label for="pays">
-                Pays *
-            </label>
-
-            <select
-                id="pays"
-                name="pays"
-                autocomplete="country"
-                required>
-
-                <option value="France">
-                    France
-                </option>
-
-                <option value="Belgique">
-                    Belgique
-                </option>
-
-                <option value="Luxembourg">
-                    Luxembourg
-                </option>
-
-                <option value="Suisse">
-                    Suisse
-                </option>
-
-                <option value="Italie">
-                    Italie
-                </option>
-
-                <option value="Espagne">
-                    Espagne
-                </option>
-
-            </select>
-
-
-            <!-- RÉCAPITULATIF -->
-
-            <div class="recapitulatif">
-
-                <h3>
-                    Récapitulatif
-                </h3>
-
-                <p>
-                    Maillot rétro 2016/2017
-                </p>
-
-                <p>
-                    Taille :
-                    <strong id="recapTaille">
-                        S
-                    </strong>
-                </p>
-
-                <p>
-                    Flocage :
-                    <strong id="recapFlocage">
-                        Aucun
-                    </strong>
-                </p>
-
-                <p>
-                    Livraison :
-                    <strong>
-                        Standard — 20 jours ouvrés
-                    </strong>
-                </p>
-
-                <p>
-                    Total :
-                    <strong id="recapPrix">
-                        39,90 €
-                    </strong>
-                </p>
-
-            </div>
-
-
-            <!-- RETOUR -->
-
-            <button
-                type="button"
-                id="retourProduit">
-
-                ← Retour au produit
-
-            </button>
-
-
-            <!-- CONTINUER PAYPAL -->
-
-            <button
-                type="submit"
-                class="btn-commander">
-
-                CONTINUER VERS LE PAIEMENT
-
-            </button>
-
-
-        </form>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     PAIEMENT
-========================================= -->
-
-<section
-    id="sectionPaiement"
-    class="section-paiement"
-    style="display:none;">
-
-    <div class="paiement">
-
-        <h2>
-            💳 Paiement sécurisé
-        </h2>
-
-        <p>
-            Vérifiez vos informations puis effectuez votre paiement.
-        </p>
-
-        <div
-            id="paypal-button-container">
         </div>
 
-        <button
-            type="button"
-            id="retourLivraison">
-
-            ← Modifier mes informations
-
-        </button>
 
     </div>
 
 </section>
 
 
-<!-- =========================================
-     CONFIRMATION
-========================================= -->
-
-<section
-    id="confirmation"
-    class="confirmation"
-    style="display:none;">
-
-    <div>
-
-        <h2>
-            ✅ Commande confirmée
-        </h2>
-
-        <p>
-            Merci pour votre commande !
-        </p>
-
-        <p>
-            Votre commande a bien été enregistrée.
-        </p>
-
-        <p>
-            Un e-mail de confirmation vous sera envoyé.
-        </p>
-
-        <p>
-            Délai de livraison estimé :
-            <strong>
-                20 jours ouvrés
-            </strong>
-        </p>
-
-        <p>
-            Numéro de commande :
-            <strong id="numeroCommande">
-            </strong>
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
+<!-- =========================
      AVIS
-========================================= -->
+========================= -->
 
 <div
     id="avisModal"
     class="avis-modal">
 
+
     <div class="avis-contenu">
+
 
         <button
             id="fermerAvis"
@@ -639,9 +329,11 @@
 
         </button>
 
+
         <h2>
             Avis clients
         </h2>
+
 
         <div class="note-grande">
 
@@ -653,9 +345,11 @@
 
         </div>
 
+
         <p>
             Basé sur 46 avis
         </p>
+
 
         <hr>
 
@@ -745,14 +439,15 @@
 
         </div>
 
+
     </div>
 
 </div>
 
 
-<!-- =========================================
+<!-- =========================
      CONTACT
-========================================= -->
+========================= -->
 
 <section
     id="contact"
@@ -772,9 +467,9 @@
 </main>
 
 
-<!-- =========================================
+<!-- =========================
      JAVASCRIPT
-========================================= -->
+========================= -->
 
 <script>
 
@@ -783,33 +478,21 @@ document.addEventListener(
     function () {
 
 
-        /* =====================================
-           CONFIGURATION
-        ===================================== */
+        /* =========================
+           PRIX
+        ========================= */
 
-        const PRIX_BASE = 39.90;
-        const PRIX_FLOCAGE = 1.00;
+        const prixBase = 39.90;
 
-
-        const URL_GOOGLE_SCRIPT =
-            "https://script.google.com/macros/s/AKfycby6K7pXjRjdmvAFzD0aretefH2nNtZ8iTFK3BV9ikQ7z-gckkVOCt3dJ14yUEfNPyeV/exec";
+        const prixFlocage = 1.00;
 
 
-        /* =====================================
+        /* =========================
            ELEMENTS
-        ===================================== */
-
-        const taille =
-            document.getElementById("taille");
+        ========================= */
 
         const flocage =
             document.getElementById("flocage");
-
-        const nomFlocage =
-            document.getElementById("nomFlocage");
-
-        const numeroFlocage =
-            document.getElementById("numeroFlocage");
 
         const zoneFlocage =
             document.getElementById("zoneFlocage");
@@ -817,307 +500,95 @@ document.addEventListener(
         const prixFinal =
             document.getElementById("prixFinal");
 
-        const continuerLivraison =
-            document.getElementById("continuerLivraison");
 
-        const sectionProduit =
-            document.getElementById("produit");
+        /* =========================
+           CALCUL DU TOTAL
+        ========================= */
 
-        const sectionLivraison =
-            document.getElementById("sectionLivraison");
+        function mettreAJourPrix() {
 
-        const sectionPaiement =
-            document.getElementById("sectionPaiement");
-
-        const confirmation =
-            document.getElementById("confirmation");
-
-        const formLivraison =
-            document.getElementById("formLivraison");
-
-        const retourProduit =
-            document.getElementById("retourProduit");
-
-        const retourLivraison =
-            document.getElementById("retourLivraison");
+            let total = prixBase;
 
 
-        /* =====================================
-           CALCUL PRIX
-        ===================================== */
-
-        function calculerPrix() {
-
-            let total = PRIX_BASE;
+            /* FLOCCAGE */
 
             if (
                 flocage &&
                 flocage.checked
             ) {
 
-                total += PRIX_FLOCAGE;
+                total += prixFlocage;
 
             }
 
-            return total;
 
-        }
+            /* AFFICHAGE */
 
-
-        function afficherPrix() {
-
-            const total =
-                calculerPrix();
-
-            const affichage =
+            prixFinal.textContent =
                 total
                     .toFixed(2)
                     .replace(".", ",")
                 + " €";
 
-            prixFinal.textContent =
-                affichage;
-
-            const recapPrix =
-                document.getElementById(
-                    "recapPrix"
-                );
-
-            if (recapPrix) {
-
-                recapPrix.textContent =
-                    affichage;
-
-            }
-
         }
 
 
-        /* =====================================
+        /* =========================
            FLOCCAGE
-        ===================================== */
+        ========================= */
 
-        flocage.addEventListener(
-            "change",
-            function () {
+        if (flocage) {
 
-                if (this.checked) {
-
-                    zoneFlocage.style.display =
-                        "flex";
-
-                } else {
-
-                    zoneFlocage.style.display =
-                        "none";
-
-                    nomFlocage.value =
-                        "";
-
-                    numeroFlocage.value =
-                        "";
-
-                }
-
-                afficherPrix();
-
-            }
-        );
+            flocage.addEventListener(
+                "change",
+                function () {
 
 
-        zoneFlocage.style.display =
-            "none";
+                    if (
+                        this.checked
+                    ) {
+
+                        zoneFlocage.style.display =
+                            "flex";
+
+                    } else {
+
+                        zoneFlocage.style.display =
+                            "none";
+
+                    }
 
 
-        afficherPrix();
-
-
-        /* =====================================
-           RÉCAPITULATIF
-        ===================================== */
-
-        function mettreAJourRecap() {
-
-            const recapTaille =
-                document.getElementById(
-                    "recapTaille"
-                );
-
-            const recapFlocage =
-                document.getElementById(
-                    "recapFlocage"
-                );
-
-
-            recapTaille.textContent =
-                taille.value;
-
-
-            if (flocage.checked) {
-
-                const nom =
-                    nomFlocage.value.trim();
-
-                const numero =
-                    numeroFlocage.value.trim();
-
-                let texte =
-                    "Oui";
-
-                if (nom || numero) {
-
-                    texte =
-                        nom +
-                        (numero
-                            ? " #" + numero
-                            : "");
+                    mettreAJourPrix();
 
                 }
-
-                recapFlocage.textContent =
-                    texte;
-
-            } else {
-
-                recapFlocage.textContent =
-                    "Aucun";
-
-            }
-
-            afficherPrix();
+            );
 
         }
 
 
-        taille.addEventListener(
-            "change",
-            mettreAJourRecap
-        );
+        /* =========================
+           ZONE FLOCCAGE CACHÉE
+        ========================= */
+
+        if (zoneFlocage) {
+
+            zoneFlocage.style.display =
+                "none";
+
+        }
 
 
-        nomFlocage.addEventListener(
-            "input",
-            mettreAJourRecap
-        );
+        /* =========================
+           PRIX INITIAL
+        ========================= */
+
+        mettreAJourPrix();
 
 
-        numeroFlocage.addEventListener(
-            "input",
-            mettreAJourRecap
-        );
-
-
-        /* =====================================
-           OUVRIR LIVRAISON
-        ===================================== */
-
-        continuerLivraison.addEventListener(
-            "click",
-            function () {
-
-                mettreAJourRecap();
-
-                sectionProduit.style.display =
-                    "none";
-
-                sectionLivraison.style.display =
-                    "block";
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-        );
-
-
-        /* =====================================
-           RETOUR PRODUIT
-        ===================================== */
-
-        retourProduit.addEventListener(
-            "click",
-            function () {
-
-                sectionLivraison.style.display =
-                    "none";
-
-                sectionProduit.style.display =
-                    "grid";
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-        );
-
-
-        /* =====================================
-           FORMULAIRE LIVRAISON
-        ===================================== */
-
-        formLivraison.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                if (
-                    !formLivraison.checkValidity()
-                ) {
-
-                    formLivraison.reportValidity();
-
-                    return;
-
-                }
-
-
-                sectionLivraison.style.display =
-                    "none";
-
-                sectionPaiement.style.display =
-                    "block";
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-        );
-
-
-        /* =====================================
-           RETOUR INFORMATIONS
-        ===================================== */
-
-        retourLivraison.addEventListener(
-            "click",
-            function () {
-
-                sectionPaiement.style.display =
-                    "none";
-
-                sectionLivraison.style.display =
-                    "block";
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-        );
-
-
-        /* =====================================
+        /* =========================
            AVIS
-        ===================================== */
+        ========================= */
 
         const ouvrirAvis =
             document.getElementById(
@@ -1135,47 +606,73 @@ document.addEventListener(
             );
 
 
-        ouvrirAvis.addEventListener(
-            "click",
-            function () {
+        /* OUVRIR */
 
-                avisModal.classList.add(
-                    "active"
-                );
+        if (
+            ouvrirAvis &&
+            avisModal
+        ) {
 
-            }
-        );
+            ouvrirAvis.addEventListener(
+                "click",
+                function () {
 
+                    avisModal.classList.add(
+                        "active"
+                    );
 
-        fermerAvis.addEventListener(
-            "click",
-            function () {
+                }
+            );
 
-                avisModal.classList.remove(
-                    "active"
-                );
-
-            }
-        );
+        }
 
 
-        avisModal.addEventListener(
-            "click",
-            function (event) {
+        /* FERMER */
 
-                if (
-                    event.target === avisModal
-                ) {
+        if (
+            fermerAvis &&
+            avisModal
+        ) {
+
+            fermerAvis.addEventListener(
+                "click",
+                function () {
 
                     avisModal.classList.remove(
                         "active"
                     );
 
                 }
+            );
 
-            }
-        );
+        }
 
+
+        /* CLIQUER EN DEHORS */
+
+        if (avisModal) {
+
+            avisModal.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target === avisModal
+                    ) {
+
+                        avisModal.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* ESC */
 
         document.addEventListener(
             "keydown",
@@ -1185,9 +682,13 @@ document.addEventListener(
                     event.key === "Escape"
                 ) {
 
-                    avisModal.classList.remove(
-                        "active"
-                    );
+                    if (avisModal) {
+
+                        avisModal.classList.remove(
+                            "active"
+                        );
+
+                    }
 
                 }
 
@@ -1195,391 +696,170 @@ document.addEventListener(
         );
 
 
-        /* =====================================
+        /* =========================
            PAYPAL
-        ===================================== */
+        ========================= */
 
         if (
-            typeof paypal === "undefined"
+            typeof paypal !== "undefined"
         ) {
+
+
+            paypal.Buttons({
+
+                style: {
+
+                    layout: "vertical",
+
+                    color: "gold",
+
+                    shape: "rect",
+
+                    label: "paypal"
+
+                },
+
+
+                /* =========================
+                   CREATION COMMANDE
+                ========================= */
+
+                createOrder:
+                    function (
+                        data,
+                        actions
+                    ) {
+
+
+                        let total =
+                            prixBase;
+
+
+                        /* FLOCCAGE */
+
+                        if (
+                            flocage &&
+                            flocage.checked
+                        ) {
+
+                            total +=
+                                prixFlocage;
+
+                        }
+
+
+                        return actions.order.create({
+
+                            purchase_units: [
+
+                                {
+
+                                    description:
+                                        "Maillot rétro 2026/2027",
+
+                                    amount: {
+
+                                        currency_code:
+                                            "EUR",
+
+                                        value:
+                                            total.toFixed(2)
+
+                                    }
+
+                                }
+
+                            ]
+
+                        });
+
+                    },
+
+
+                /* =========================
+                   PAIEMENT ACCEPTÉ
+                ========================= */
+
+                onApprove:
+                    function (
+                        data,
+                        actions
+                    ) {
+
+
+                        return actions.order
+                            .capture()
+                            .then(
+                                function (
+                                    details
+                                ) {
+
+
+                                    alert(
+                                        "Paiement effectué avec succès ! Merci pour votre commande."
+                                    );
+
+
+                                    console.log(
+                                        "Commande PayPal :",
+                                        details
+                                    );
+
+
+                                }
+                            );
+
+                    },
+
+
+                /* =========================
+                   ANNULATION
+                ========================= */
+
+                onCancel:
+                    function () {
+
+                        alert(
+                            "Paiement annulé."
+                        );
+
+                    },
+
+
+                /* =========================
+                   ERREUR
+                ========================= */
+
+                onError:
+                    function (err) {
+
+
+                        console.error(
+                            "Erreur PayPal :",
+                            err
+                        );
+
+
+                        alert(
+                            "Une erreur est survenue avec PayPal."
+                        );
+
+                    }
+
+            }).render(
+                "#paypal-button-container"
+            );
+
+
+        } else {
+
 
             console.error(
                 "PayPal SDK non chargé."
             );
 
-            return;
 
         }
-
-
-        paypal.Buttons({
-
-            style: {
-
-                layout: "vertical",
-
-                color: "gold",
-
-                shape: "rect",
-
-                label: "paypal"
-
-            },
-
-
-            /* =================================
-               CRÉATION COMMANDE PAYPAL
-            ================================= */
-
-            createOrder:
-                function (
-                    data,
-                    actions
-                ) {
-
-                    const total =
-                        calculerPrix();
-
-
-                    return actions.order.create({
-
-                        purchase_units: [
-
-                            {
-
-                                description:
-                                    "Maillot rétro 2016/2017",
-
-                                amount: {
-
-                                    currency_code:
-                                        "EUR",
-
-                                    value:
-                                        total.toFixed(2)
-
-                                }
-
-                            }
-
-                        ]
-
-                    });
-
-                },
-
-
-            /* =================================
-               PAIEMENT ACCEPTÉ
-            ================================= */
-
-            onApprove:
-                function (
-                    data,
-                    actions
-                ) {
-
-                    return actions.order
-                        .capture()
-                        .then(
-                            async function (
-                                details
-                            ) {
-
-
-                                /* =================
-                                   NUMÉRO COMMANDE
-                                ================= */
-
-                                const numeroCommande =
-                                    "SK-" +
-                                    Date.now();
-
-
-                                /* =================
-                                   INFORMATIONS
-                                ================= */
-
-                                const prenom =
-                                    document.getElementById(
-                                        "prenom"
-                                    ).value.trim();
-
-
-                                const nom =
-                                    document.getElementById(
-                                        "nom"
-                                    ).value.trim();
-
-
-                                const email =
-                                    document.getElementById(
-                                        "email"
-                                    ).value.trim();
-
-
-                                const telephone =
-                                    document.getElementById(
-                                        "telephone"
-                                    ).value.trim();
-
-
-                                const adresse =
-                                    document.getElementById(
-                                        "adresse"
-                                    ).value.trim();
-
-
-                                const complement =
-                                    document.getElementById(
-                                        "complement"
-                                    ).value.trim();
-
-
-                                const codePostal =
-                                    document.getElementById(
-                                        "codePostal"
-                                    ).value.trim();
-
-
-                                const ville =
-                                    document.getElementById(
-                                        "ville"
-                                    ).value.trim();
-
-
-                                const pays =
-                                    document.getElementById(
-                                        "pays"
-                                    ).value;
-
-
-                                /* =================
-                                   FLOCCAGE
-                                ================= */
-
-                                let flocageTexte =
-                                    "Aucun";
-
-
-                                if (
-                                    flocage.checked
-                                ) {
-
-                                    const nomF =
-                                        nomFlocage
-                                            .value
-                                            .trim();
-
-                                    const numeroF =
-                                        numeroFlocage
-                                            .value
-                                            .trim();
-
-
-                                    flocageTexte =
-                                        nomF;
-
-
-                                    if (
-                                        numeroF
-                                    ) {
-
-                                        flocageTexte +=
-                                            " #" +
-                                            numeroF;
-
-                                    }
-
-
-                                    if (
-                                        !flocageTexte
-                                    ) {
-
-                                        flocageTexte =
-                                            "Personnalisé";
-
-                                    }
-
-                                }
-
-
-                                /* =================
-                                   TOTAL
-                                ================= */
-
-                                const montant =
-                                    calculerPrix()
-                                        .toFixed(2);
-
-
-                                /* =================
-                                   DONNÉES
-                                ================= */
-
-                                const commande = {
-
-                                    commande:
-                                        numeroCommande,
-
-                                    prenom:
-                                        prenom,
-
-                                    nom:
-                                        nom,
-
-                                    email:
-                                        email,
-
-                                    telephone:
-                                        telephone,
-
-                                    adresse:
-                                        adresse,
-
-                                    complement:
-                                        complement,
-
-                                    codePostal:
-                                        codePostal,
-
-                                    ville:
-                                        ville,
-
-                                    pays:
-                                        pays,
-
-                                    taille:
-                                        taille.value,
-
-                                    flocage:
-                                        flocageTexte,
-
-                                    livraison:
-                                        "Standard — 20 jours ouvrés",
-
-                                    montant:
-                                        montant + " €",
-
-                                    statut:
-                                        "Paiement reçu",
-
-                                    paypalOrderId:
-                                        data.orderID
-
-                                };
-
-
-                                /* =================
-                                   ENVOI GOOGLE SHEETS
-                                ================= */
-
-                                try {
-
-                                    await fetch(
-                                        URL_GOOGLE_SCRIPT,
-                                        {
-
-                                            method:
-                                                "POST",
-
-                                            mode:
-                                                "no-cors",
-
-                                            headers: {
-
-                                                "Content-Type":
-                                                    "text/plain;charset=utf-8"
-
-                                            },
-
-                                            body:
-                                                JSON.stringify(
-                                                    commande
-                                                )
-
-                                        }
-                                    );
-
-                                } catch (erreur) {
-
-                                    console.error(
-                                        "Erreur Google Sheets :",
-                                        erreur
-                                    );
-
-                                }
-
-
-                                /* =================
-                                   AFFICHAGE
-                                ================= */
-
-                                sectionPaiement.style.display =
-                                    "none";
-
-                                confirmation.style.display =
-                                    "block";
-
-                                document.getElementById(
-                                    "numeroCommande"
-                                ).textContent =
-                                    numeroCommande;
-
-
-                                window.scrollTo({
-                                    top: 0,
-                                    behavior: "smooth"
-                                });
-
-
-                                console.log(
-                                    "Commande SO-KIT :",
-                                    commande
-                                );
-
-
-                            }
-                        );
-
-                },
-
-
-            /* =================================
-               ANNULATION
-            ================================= */
-
-            onCancel:
-                function () {
-
-                    alert(
-                        "Paiement annulé."
-                    );
-
-                },
-
-
-            /* =================================
-               ERREUR
-            ================================= */
-
-            onError:
-                function (err) {
-
-                    console.error(
-                        "Erreur PayPal :",
-                        err
-                    );
-
-                    alert(
-                        "Une erreur est survenue avec PayPal."
-                    );
-
-                }
-
-        }).render(
-            "#paypal-button-container"
-        );
 
 
     }
