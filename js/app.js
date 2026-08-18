@@ -8,55 +8,100 @@ document.addEventListener("DOMContentLoaded", function () {
     const zoneFlocage = document.getElementById("zoneFlocage");
     const livraison = document.getElementById("livraison");
     const prixFinal = document.getElementById("prixFinal");
+    const boutonCommander = document.getElementById("commander");
 
-    function mettreAJourPrix() {
+    /* =========================
+       CALCUL DU PRIX
+    ========================= */
+
+    function calculerPrix() {
 
         let total = prixBase;
 
-        // Flocage +1 €
         if (flocage && flocage.checked) {
             total += prixFlocage;
         }
 
-        // Livraison express +3,90 €
         if (livraison && livraison.value === "3.90") {
             total += prixLivraisonExpress;
         }
 
-        // Affichage
-        prixFinal.textContent =
-            total.toFixed(2).replace(".", ",") + " €";
+        if (prixFinal) {
+            prixFinal.textContent =
+                total.toFixed(2).replace(".", ",") + " €";
+        }
+
+        return total;
     }
 
 
-    // Flocage
+    /* =========================
+       FLOCCAGE
+    ========================= */
+
     if (flocage) {
 
         flocage.addEventListener("change", function () {
 
             if (this.checked) {
+
                 zoneFlocage.style.display = "flex";
+
             } else {
+
                 zoneFlocage.style.display = "none";
+
             }
 
-            mettreAJourPrix();
+            calculerPrix();
+
         });
 
     }
 
 
-    // Livraison
+    /* =========================
+       LIVRAISON
+    ========================= */
+
     if (livraison) {
 
-        livraison.addEventListener("change", function () {
-            mettreAJourPrix();
-        });
+        livraison.addEventListener(
+            "change",
+            calculerPrix
+        );
 
     }
 
 
-    // Prix au chargement
-    mettreAJourPrix();
+    /* =========================
+       PRIX AU CHARGEMENT
+    ========================= */
+
+    calculerPrix();
+
+
+    /* =========================
+       BOUTON COMMANDER
+    ========================= */
+
+    if (boutonCommander) {
+
+        boutonCommander.addEventListener(
+            "click",
+            function () {
+
+                const total = calculerPrix();
+
+                alert(
+                    "Commande de " +
+                    total.toFixed(2).replace(".", ",") +
+                    " €"
+                );
+
+            }
+        );
+
+    }
 
 });
