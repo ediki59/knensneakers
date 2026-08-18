@@ -16,14 +16,18 @@
     <link rel="stylesheet"
           href="css/style.css">
 
-    <!-- PAYPAL -->
-    <script src="https://www.paypal.com/sdk/js?client-id=KhC8z4l_2eL1R6d8euMZj55dCIA2dLX3KVcYMmp&currency=EUR"></script>
+    <!-- PAYPAL SANDBOX -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AbcVKpAm89gERnzfTr4r_-N3Wv5Iv2PBHeWSxKhdKhC8z4l_2eL1R6d8euMZJy55dCIA2dLX3KVcYMmp&currency=EUR&components=buttons"></script>
 
 </head>
 
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="header">
 
@@ -40,6 +44,10 @@
 </header>
 
 
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav class="navigation">
 
     <a href="#">Accueil</a>
@@ -53,6 +61,10 @@
 
 <main>
 
+
+<!-- =========================
+     PREMIÈRE BANNIÈRE
+========================= -->
 
 <section class="banniere banniere-principale">
 
@@ -71,6 +83,10 @@
 </section>
 
 
+<!-- =========================
+     DEUXIÈME BANNIÈRE
+========================= -->
+
 <section class="banniere-secondaire">
 
     <span>
@@ -88,10 +104,16 @@
 </section>
 
 
+<!-- =========================
+     PRODUIT
+========================= -->
+
 <section
     class="produit"
     id="produit">
 
+
+    <!-- PHOTO -->
 
     <div class="photo">
 
@@ -101,6 +123,8 @@
 
     </div>
 
+
+    <!-- INFORMATIONS -->
 
     <div class="infos">
 
@@ -125,15 +149,21 @@
         </button>
 
 
+        <!-- TITRE -->
+
         <h2>
             Maillot rétro 2016/2017
         </h2>
 
 
+        <!-- PRIX -->
+
         <p class="prix">
             39,90 €
         </p>
 
+
+        <!-- DISPONIBILITÉ -->
 
         <p class="stock">
             🔥 Disponible
@@ -178,6 +208,8 @@
 
         </div>
 
+
+        <!-- ZONE FLOCCAGE -->
 
         <div
             id="zoneFlocage"
@@ -234,29 +266,19 @@
         </div>
 
 
-        <!-- COMMANDER -->
+        <!-- =========================
+             PAYPAL
+        ========================= -->
 
-        <button
-            id="commander"
-            class="btn-commander"
-            type="button">
+        <div class="paiement">
 
-            🛒 COMMANDER
-
-        </button>
-
-
-        <!-- PAYPAL -->
-
-        <div
-            id="paypal-container"
-            style="display:none; margin-top:20px;">
-
-            <p style="font-weight:bold;">
-                Paiement sécurisé par PayPal
+            <p>
+                💳 Paiement sécurisé par PayPal
             </p>
 
-            <div id="paypal-button-container"></div>
+            <div
+                id="paypal-button-container">
+            </div>
 
         </div>
 
@@ -266,13 +288,17 @@
 </section>
 
 
-<!-- AVIS -->
+<!-- =========================
+     AVIS
+========================= -->
 
 <div
     id="avisModal"
     class="avis-modal">
 
+
     <div class="avis-contenu">
+
 
         <button
             id="fermerAvis"
@@ -283,9 +309,11 @@
 
         </button>
 
+
         <h2>
             Avis clients
         </h2>
+
 
         <div class="note-grande">
 
@@ -297,16 +325,20 @@
 
         </div>
 
+
         <p>
             Basé sur 46 avis
         </p>
+
 
         <hr>
 
 
         <div class="avis">
 
-            <strong>★★★★★</strong>
+            <strong>
+                ★★★★★
+            </strong>
 
             <p>
                 Très beau maillot, bonne qualité.
@@ -321,7 +353,9 @@
 
         <div class="avis">
 
-            <strong>★★★★★</strong>
+            <strong>
+                ★★★★★
+            </strong>
 
             <p>
                 Très satisfait de mon achat.
@@ -336,7 +370,9 @@
 
         <div class="avis">
 
-            <strong>★★★★★</strong>
+            <strong>
+                ★★★★★
+            </strong>
 
             <p>
                 Maillot conforme aux photos,
@@ -352,7 +388,9 @@
 
         <div class="avis">
 
-            <strong>★★★★☆</strong>
+            <strong>
+                ★★★★☆
+            </strong>
 
             <p>
                 Bonne qualité et livraison rapide.
@@ -367,7 +405,9 @@
 
         <div class="avis">
 
-            <strong>★★★★★</strong>
+            <strong>
+                ★★★★★
+            </strong>
 
             <p>
                 Très bon rapport qualité/prix.
@@ -379,12 +419,15 @@
 
         </div>
 
+
     </div>
 
 </div>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section
     id="contact"
@@ -404,396 +447,11 @@
 </main>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script src="js/app.js"></script>
-
-
-<script>
-
-/* =========================
-   PRIX
-========================= */
-
-const PRIX_MAILLOT = 39.90;
-
-const PRIX_FLOCAGE = 1.00;
-
-
-const flocage =
-    document.getElementById("flocage");
-
-const livraison =
-    document.getElementById("livraison");
-
-const prixFinal =
-    document.getElementById("prixFinal");
-
-const commander =
-    document.getElementById("commander");
-
-const paypalContainer =
-    document.getElementById("paypal-container");
-
-
-/* =========================
-   CALCUL TOTAL
-========================= */
-
-function obtenirPrixTotal() {
-
-    let prix = PRIX_MAILLOT;
-
-
-    if (flocage.checked) {
-
-        prix += PRIX_FLOCAGE;
-
-    }
-
-
-    prix += parseFloat(
-        livraison.value
-    );
-
-
-    return Number(
-        prix.toFixed(2)
-    );
-
-}
-
-
-function calculerPrix() {
-
-    const prix =
-        obtenirPrixTotal();
-
-
-    prixFinal.textContent =
-        prix.toFixed(2)
-            .replace(".", ",")
-        + " €";
-
-}
-
-
-flocage.addEventListener(
-    "change",
-    calculerPrix
-);
-
-
-livraison.addEventListener(
-    "change",
-    calculerPrix
-);
-
-
-/* =========================
-   FLOCCAGE
-========================= */
-
-const zoneFlocage =
-    document.getElementById(
-        "zoneFlocage"
-    );
-
-
-flocage.addEventListener(
-    "change",
-    function () {
-
-        if (this.checked) {
-
-            zoneFlocage.style.display =
-                "flex";
-
-        } else {
-
-            zoneFlocage.style.display =
-                "none";
-
-        }
-
-    }
-);
-
-
-zoneFlocage.style.display =
-    "none";
-
-
-/* =========================
-   PAYPAL
-========================= */
-
-let paypalInitialise =
-    false;
-
-
-function initialiserPayPal() {
-
-    if (paypalInitialise) {
-
-        return;
-
-    }
-
-
-    paypalInitialise = true;
-
-
-    paypal.Buttons({
-
-        createOrder:
-            function (
-                data,
-                actions
-            ) {
-
-                const total =
-                    obtenirPrixTotal();
-
-
-                return actions.order.create({
-
-                    purchase_units: [
-
-                        {
-
-                            description:
-                                "Maillot rétro 2016/2017 - SO-KIT",
-
-                            amount: {
-
-                                currency_code:
-                                    "EUR",
-
-                                value:
-                                    total.toFixed(2)
-
-                            }
-
-                        }
-
-                    ]
-
-                });
-
-            },
-
-
-        onApprove:
-            function (
-                data,
-                actions
-            ) {
-
-                return actions.order
-                    .capture()
-                    .then(
-                        function (details) {
-
-                            alert(
-                                "Merci " +
-                                details.payer.name.given_name +
-                                " ! Votre paiement a été effectué."
-                            );
-
-                        }
-                    );
-
-            },
-
-
-        onCancel:
-            function () {
-
-                alert(
-                    "Paiement annulé."
-                );
-
-            },
-
-
-        onError:
-            function (err) {
-
-                console.error(
-                    "Erreur PayPal :",
-                    err
-                );
-
-                alert(
-                    "Une erreur est survenue avec PayPal."
-                );
-
-            }
-
-    }).render(
-        "#paypal-button-container"
-    );
-
-}
-
-
-/* =========================
-   BOUTON COMMANDER
-========================= */
-
-commander.addEventListener(
-    "click",
-    function () {
-
-
-        if (flocage.checked) {
-
-            const nom =
-                document.getElementById(
-                    "nomFlocage"
-                ).value.trim();
-
-
-            const numero =
-                document.getElementById(
-                    "numeroFlocage"
-                ).value.trim();
-
-
-            if (
-                nom === "" ||
-                numero === ""
-            ) {
-
-                alert(
-                    "Merci de renseigner le nom et le numéro du flocage."
-                );
-
-                return;
-
-            }
-
-        }
-
-
-        paypalContainer.style.display =
-            "block";
-
-
-        commander.style.display =
-            "none";
-
-
-        initialiserPayPal();
-
-
-        setTimeout(
-            function () {
-
-                paypalContainer.scrollIntoView({
-
-                    behavior:
-                        "smooth",
-
-                    block:
-                        "center"
-
-                });
-
-            },
-            200
-        );
-
-    }
-);
-
-
-/* =========================
-   AVIS
-========================= */
-
-const ouvrirAvis =
-    document.getElementById(
-        "ouvrirAvis"
-    );
-
-const avisModal =
-    document.getElementById(
-        "avisModal"
-    );
-
-const fermerAvis =
-    document.getElementById(
-        "fermerAvis"
-    );
-
-
-ouvrirAvis.addEventListener(
-    "click",
-    function () {
-
-        avisModal.classList.add(
-            "active"
-        );
-
-    }
-);
-
-
-fermerAvis.addEventListener(
-    "click",
-    function () {
-
-        avisModal.classList.remove(
-            "active"
-        );
-
-    }
-);
-
-
-avisModal.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            event.target === avisModal
-        ) {
-
-            avisModal.classList.remove(
-                "active"
-            );
-
-        }
-
-    }
-);
-
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            avisModal.classList.remove(
-                "active"
-            );
-
-        }
-
-    }
-);
-
-
-/* =========================
-   CALCUL INITIAL
-========================= */
-
-calculerPrix();
-
-</script>
 
 
 </body>
