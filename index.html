@@ -16,15 +16,14 @@
     <link rel="stylesheet"
           href="css/style.css">
 
+    <!-- PAYPAL -->
+    <script src="https://www.paypal.com/sdk/js?client-id=KhC8z4l_2eL1R6d8euMZj55dCIA2dLX3KVcYMmp&currency=EUR"></script>
+
 </head>
 
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header class="header">
 
@@ -41,10 +40,6 @@
 </header>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <nav class="navigation">
 
     <a href="#">Accueil</a>
@@ -58,10 +53,6 @@
 
 <main>
 
-
-<!-- =========================
-     PREMIÈRE BANNIÈRE
-========================= -->
 
 <section class="banniere banniere-principale">
 
@@ -80,10 +71,6 @@
 </section>
 
 
-<!-- =========================
-     DEUXIÈME BANNIÈRE
-========================= -->
-
 <section class="banniere-secondaire">
 
     <span>
@@ -101,16 +88,10 @@
 </section>
 
 
-<!-- =========================
-     PRODUIT
-========================= -->
-
 <section
     class="produit"
     id="produit">
 
-
-    <!-- PHOTO -->
 
     <div class="photo">
 
@@ -121,12 +102,10 @@
     </div>
 
 
-    <!-- INFORMATIONS -->
-
     <div class="infos">
 
 
-        <!-- AVIS CLIQUABLES -->
+        <!-- AVIS -->
 
         <button
             class="note"
@@ -146,21 +125,15 @@
         </button>
 
 
-        <!-- TITRE -->
-
         <h2>
             Maillot rétro 2016/2017
         </h2>
 
 
-        <!-- PRIX -->
-
         <p class="prix">
             39,90 €
         </p>
 
-
-        <!-- DISPONIBILITÉ -->
 
         <p class="stock">
             🔥 Disponible
@@ -175,25 +148,15 @@
 
         <select id="taille">
 
-            <option value="S">
-                S
-            </option>
+            <option value="S">S</option>
 
-            <option value="M">
-                M
-            </option>
+            <option value="M">M</option>
 
-            <option value="L">
-                L
-            </option>
+            <option value="L">L</option>
 
-            <option value="XL">
-                XL
-            </option>
+            <option value="XL">XL</option>
 
-            <option value="XXL">
-                XXL
-            </option>
+            <option value="XXL">XXL</option>
 
         </select>
 
@@ -215,8 +178,6 @@
 
         </div>
 
-
-        <!-- ZONE FLOCCAGE -->
 
         <div
             id="zoneFlocage"
@@ -273,7 +234,7 @@
         </div>
 
 
-        <!-- BOUTON -->
+        <!-- COMMANDER -->
 
         <button
             id="commander"
@@ -285,22 +246,33 @@
         </button>
 
 
+        <!-- PAYPAL -->
+
+        <div
+            id="paypal-container"
+            style="display:none; margin-top:20px;">
+
+            <p style="font-weight:bold;">
+                Paiement sécurisé par PayPal
+            </p>
+
+            <div id="paypal-button-container"></div>
+
+        </div>
+
+
     </div>
 
 </section>
 
 
-<!-- =========================
-     AVIS
-========================= -->
+<!-- AVIS -->
 
 <div
     id="avisModal"
     class="avis-modal">
 
-
     <div class="avis-contenu">
-
 
         <button
             id="fermerAvis"
@@ -311,11 +283,9 @@
 
         </button>
 
-
         <h2>
             Avis clients
         </h2>
-
 
         <div class="note-grande">
 
@@ -327,20 +297,16 @@
 
         </div>
 
-
         <p>
             Basé sur 46 avis
         </p>
-
 
         <hr>
 
 
         <div class="avis">
 
-            <strong>
-                ★★★★★
-            </strong>
+            <strong>★★★★★</strong>
 
             <p>
                 Très beau maillot, bonne qualité.
@@ -355,9 +321,7 @@
 
         <div class="avis">
 
-            <strong>
-                ★★★★★
-            </strong>
+            <strong>★★★★★</strong>
 
             <p>
                 Très satisfait de mon achat.
@@ -372,9 +336,7 @@
 
         <div class="avis">
 
-            <strong>
-                ★★★★★
-            </strong>
+            <strong>★★★★★</strong>
 
             <p>
                 Maillot conforme aux photos,
@@ -390,9 +352,7 @@
 
         <div class="avis">
 
-            <strong>
-                ★★★★☆
-            </strong>
+            <strong>★★★★☆</strong>
 
             <p>
                 Bonne qualité et livraison rapide.
@@ -407,9 +367,7 @@
 
         <div class="avis">
 
-            <strong>
-                ★★★★★
-            </strong>
+            <strong>★★★★★</strong>
 
             <p>
                 Très bon rapport qualité/prix.
@@ -421,15 +379,12 @@
 
         </div>
 
-
     </div>
 
 </div>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 
 <section
     id="contact"
@@ -449,19 +404,19 @@
 </main>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script src="js/app.js"></script>
 
 
 <script>
 
-
 /* =========================
-   CALCUL DU PRIX
+   PRIX
 ========================= */
+
+const PRIX_MAILLOT = 39.90;
+
+const PRIX_FLOCAGE = 1.00;
+
 
 const flocage =
     document.getElementById("flocage");
@@ -472,30 +427,50 @@ const livraison =
 const prixFinal =
     document.getElementById("prixFinal");
 
+const commander =
+    document.getElementById("commander");
 
-function calculerPrix() {
+const paypalContainer =
+    document.getElementById("paypal-container");
 
-    let prix = 39.90;
 
+/* =========================
+   CALCUL TOTAL
+========================= */
 
-    /* FLOCCAGE */
+function obtenirPrixTotal() {
+
+    let prix = PRIX_MAILLOT;
+
 
     if (flocage.checked) {
 
-        prix += 1;
+        prix += PRIX_FLOCAGE;
 
     }
 
-
-    /* LIVRAISON EXPRESS */
 
     prix += parseFloat(
         livraison.value
     );
 
 
+    return Number(
+        prix.toFixed(2)
+    );
+
+}
+
+
+function calculerPrix() {
+
+    const prix =
+        obtenirPrixTotal();
+
+
     prixFinal.textContent =
-        prix.toFixed(2).replace(".", ",")
+        prix.toFixed(2)
+            .replace(".", ",")
         + " €";
 
 }
@@ -513,13 +488,14 @@ livraison.addEventListener(
 );
 
 
-
 /* =========================
-   ZONE FLOCCAGE
+   FLOCCAGE
 ========================= */
 
 const zoneFlocage =
-    document.getElementById("zoneFlocage");
+    document.getElementById(
+        "zoneFlocage"
+    );
 
 
 flocage.addEventListener(
@@ -542,15 +518,197 @@ flocage.addEventListener(
 );
 
 
-/* CACHÉE AU DÉPART */
-
 zoneFlocage.style.display =
     "none";
 
 
+/* =========================
+   PAYPAL
+========================= */
+
+let paypalInitialise =
+    false;
+
+
+function initialiserPayPal() {
+
+    if (paypalInitialise) {
+
+        return;
+
+    }
+
+
+    paypalInitialise = true;
+
+
+    paypal.Buttons({
+
+        createOrder:
+            function (
+                data,
+                actions
+            ) {
+
+                const total =
+                    obtenirPrixTotal();
+
+
+                return actions.order.create({
+
+                    purchase_units: [
+
+                        {
+
+                            description:
+                                "Maillot rétro 2016/2017 - SO-KIT",
+
+                            amount: {
+
+                                currency_code:
+                                    "EUR",
+
+                                value:
+                                    total.toFixed(2)
+
+                            }
+
+                        }
+
+                    ]
+
+                });
+
+            },
+
+
+        onApprove:
+            function (
+                data,
+                actions
+            ) {
+
+                return actions.order
+                    .capture()
+                    .then(
+                        function (details) {
+
+                            alert(
+                                "Merci " +
+                                details.payer.name.given_name +
+                                " ! Votre paiement a été effectué."
+                            );
+
+                        }
+                    );
+
+            },
+
+
+        onCancel:
+            function () {
+
+                alert(
+                    "Paiement annulé."
+                );
+
+            },
+
+
+        onError:
+            function (err) {
+
+                console.error(
+                    "Erreur PayPal :",
+                    err
+                );
+
+                alert(
+                    "Une erreur est survenue avec PayPal."
+                );
+
+            }
+
+    }).render(
+        "#paypal-button-container"
+    );
+
+}
+
 
 /* =========================
-   FENÊTRE AVIS
+   BOUTON COMMANDER
+========================= */
+
+commander.addEventListener(
+    "click",
+    function () {
+
+
+        if (flocage.checked) {
+
+            const nom =
+                document.getElementById(
+                    "nomFlocage"
+                ).value.trim();
+
+
+            const numero =
+                document.getElementById(
+                    "numeroFlocage"
+                ).value.trim();
+
+
+            if (
+                nom === "" ||
+                numero === ""
+            ) {
+
+                alert(
+                    "Merci de renseigner le nom et le numéro du flocage."
+                );
+
+                return;
+
+            }
+
+        }
+
+
+        paypalContainer.style.display =
+            "block";
+
+
+        commander.style.display =
+            "none";
+
+
+        initialiserPayPal();
+
+
+        setTimeout(
+            function () {
+
+                paypalContainer.scrollIntoView({
+
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "center"
+
+                });
+
+            },
+            200
+        );
+
+    }
+);
+
+
+/* =========================
+   AVIS
 ========================= */
 
 const ouvrirAvis =
@@ -569,8 +727,6 @@ const fermerAvis =
     );
 
 
-/* OUVRIR */
-
 ouvrirAvis.addEventListener(
     "click",
     function () {
@@ -583,8 +739,6 @@ ouvrirAvis.addEventListener(
 );
 
 
-/* FERMER */
-
 fermerAvis.addEventListener(
     "click",
     function () {
@@ -596,8 +750,6 @@ fermerAvis.addEventListener(
     }
 );
 
-
-/* CLIQUER EN DEHORS */
 
 avisModal.addEventListener(
     "click",
@@ -617,8 +769,6 @@ avisModal.addEventListener(
 );
 
 
-/* TOUCHE ESC */
-
 document.addEventListener(
     "keydown",
     function (event) {
@@ -636,6 +786,12 @@ document.addEventListener(
     }
 );
 
+
+/* =========================
+   CALCUL INITIAL
+========================= */
+
+calculerPrix();
 
 </script>
 
