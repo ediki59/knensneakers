@@ -16,11 +16,7 @@
     <link rel="stylesheet"
           href="css/style.css">
 
-
-    <!-- =========================
-         PAYPAL
-    ========================= -->
-
+    <!-- PAYPAL -->
     <script src="https://www.paypal.com/sdk/js?client-id=AbcVKpAm89gERnzfTr4r_-N3Wv5Iv2PBHeWSxKhdKhC8z4l_2eL1R6d8euMZJy55dCIA2dLX3KVcYMmp&currency=EUR"></script>
 
 </head>
@@ -29,9 +25,9 @@
 <body>
 
 
-<!-- =========================
+<!-- =========================================
      HEADER
-========================= -->
+========================================= -->
 
 <header class="header">
 
@@ -48,9 +44,9 @@
 </header>
 
 
-<!-- =========================
+<!-- =========================================
      NAVIGATION
-========================= -->
+========================================= -->
 
 <nav class="navigation">
 
@@ -66,9 +62,9 @@
 <main>
 
 
-<!-- =========================
-     PREMIÈRE BANNIÈRE
-========================= -->
+<!-- =========================================
+     BANNIÈRE PRINCIPALE
+========================================= -->
 
 <section class="banniere banniere-principale">
 
@@ -87,9 +83,9 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      DEUXIÈME BANNIÈRE
-========================= -->
+========================================= -->
 
 <section class="banniere-secondaire">
 
@@ -108,9 +104,9 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      PRODUIT
-========================= -->
+========================================= -->
 
 <section
     class="produit"
@@ -174,39 +170,9 @@
         </p>
 
 
-        <!-- =========================
-             INFORMATIONS CLIENT
-        ========================= -->
-
-        <div class="client">
-
-            <label for="nomClient">
-                Nom et prénom
-            </label>
-
-            <input
-                type="text"
-                id="nomClient"
-                placeholder="Votre nom et prénom"
-                required>
-
-
-            <label for="emailClient">
-                Adresse e-mail
-            </label>
-
-            <input
-                type="email"
-                id="emailClient"
-                placeholder="votre@email.com"
-                required>
-
-        </div>
-
-
-        <!-- =========================
+        <!-- =====================================
              TAILLE
-        ========================= -->
+        ====================================== -->
 
         <label for="taille">
             Taille
@@ -214,32 +180,22 @@
 
         <select id="taille">
 
-            <option value="S">
-                S
-            </option>
+            <option value="S">S</option>
 
-            <option value="M">
-                M
-            </option>
+            <option value="M">M</option>
 
-            <option value="L">
-                L
-            </option>
+            <option value="L">L</option>
 
-            <option value="XL">
-                XL
-            </option>
+            <option value="XL">XL</option>
 
-            <option value="XXL">
-                XXL
-            </option>
+            <option value="XXL">XXL</option>
 
         </select>
 
 
-        <!-- =========================
+        <!-- =====================================
              FLOCCAGE
-        ========================= -->
+        ====================================== -->
 
         <div class="option">
 
@@ -276,9 +232,9 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =====================================
              LIVRAISON
-        ========================= -->
+        ====================================== -->
 
         <div class="livraison">
 
@@ -288,7 +244,7 @@
 
             <select id="livraison">
 
-                <option value="0">
+                <option value="Standard">
                     Livraison standard — offerte
                 </option>
 
@@ -301,9 +257,9 @@
         </div>
 
 
-        <!-- =========================
+        <!-- =====================================
              TOTAL
-        ========================= -->
+        ====================================== -->
 
         <div class="total">
 
@@ -318,19 +274,18 @@
         </div>
 
 
-        <!-- =========================
-             PAYPAL
-        ========================= -->
+        <!-- =====================================
+             BOUTON CONTINUER
+        ====================================== -->
 
-        <div class="paiement">
+        <button
+            type="button"
+            id="continuerLivraison"
+            class="btn-commander">
 
-            <p>
-                💳 Paiement sécurisé par PayPal
-            </p>
+            CONTINUER
 
-            <div id="paypal-button-container"></div>
-
-        </div>
+        </button>
 
 
     </div>
@@ -338,17 +293,342 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
+     INFORMATIONS DE LIVRAISON
+========================================= -->
+
+<section
+    id="sectionLivraison"
+    class="section-livraison"
+    style="display:none;">
+
+    <div class="infos-livraison">
+
+        <h2>
+            📦 Informations de livraison
+        </h2>
+
+        <p>
+            Renseignez vos coordonnées pour recevoir votre commande.
+        </p>
+
+
+        <form id="formLivraison">
+
+
+            <!-- PRÉNOM -->
+
+            <label for="prenom">
+                Prénom *
+            </label>
+
+            <input
+                type="text"
+                id="prenom"
+                name="prenom"
+                autocomplete="given-name"
+                required>
+
+
+            <!-- NOM -->
+
+            <label for="nom">
+                Nom *
+            </label>
+
+            <input
+                type="text"
+                id="nom"
+                name="nom"
+                autocomplete="family-name"
+                required>
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+                Adresse e-mail *
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required>
+
+
+            <!-- TELEPHONE -->
+
+            <label for="telephone">
+                Téléphone *
+            </label>
+
+            <input
+                type="tel"
+                id="telephone"
+                name="telephone"
+                autocomplete="tel"
+                required>
+
+
+            <!-- ADRESSE -->
+
+            <label for="adresse">
+                Adresse *
+            </label>
+
+            <input
+                type="text"
+                id="adresse"
+                name="adresse"
+                autocomplete="street-address"
+                required>
+
+
+            <!-- COMPLEMENT -->
+
+            <label for="complement">
+                Complément d'adresse
+            </label>
+
+            <input
+                type="text"
+                id="complement"
+                name="complement"
+                autocomplete="address-line2"
+                placeholder="Appartement, bâtiment...">
+
+
+            <!-- CODE POSTAL -->
+
+            <label for="codePostal">
+                Code postal *
+            </label>
+
+            <input
+                type="text"
+                id="codePostal"
+                name="codePostal"
+                autocomplete="postal-code"
+                required>
+
+
+            <!-- VILLE -->
+
+            <label for="ville">
+                Ville *
+            </label>
+
+            <input
+                type="text"
+                id="ville"
+                name="ville"
+                autocomplete="address-level2"
+                required>
+
+
+            <!-- PAYS -->
+
+            <label for="pays">
+                Pays *
+            </label>
+
+            <select
+                id="pays"
+                name="pays"
+                autocomplete="country"
+                required>
+
+                <option value="France">
+                    France
+                </option>
+
+                <option value="Belgique">
+                    Belgique
+                </option>
+
+                <option value="Luxembourg">
+                    Luxembourg
+                </option>
+
+                <option value="Suisse">
+                    Suisse
+                </option>
+
+                <option value="Italie">
+                    Italie
+                </option>
+
+                <option value="Espagne">
+                    Espagne
+                </option>
+
+            </select>
+
+
+            <!-- RÉCAPITULATIF -->
+
+            <div class="recapitulatif">
+
+                <h3>
+                    Récapitulatif
+                </h3>
+
+                <p>
+                    Maillot rétro 2016/2017
+                </p>
+
+                <p>
+                    Taille :
+                    <strong id="recapTaille">
+                        S
+                    </strong>
+                </p>
+
+                <p>
+                    Flocage :
+                    <strong id="recapFlocage">
+                        Aucun
+                    </strong>
+                </p>
+
+                <p>
+                    Livraison :
+                    <strong>
+                        Standard — 20 jours ouvrés
+                    </strong>
+                </p>
+
+                <p>
+                    Total :
+                    <strong id="recapPrix">
+                        39,90 €
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <!-- RETOUR -->
+
+            <button
+                type="button"
+                id="retourProduit">
+
+                ← Retour au produit
+
+            </button>
+
+
+            <!-- CONTINUER PAYPAL -->
+
+            <button
+                type="submit"
+                class="btn-commander">
+
+                CONTINUER VERS LE PAIEMENT
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAIEMENT
+========================================= -->
+
+<section
+    id="sectionPaiement"
+    class="section-paiement"
+    style="display:none;">
+
+    <div class="paiement">
+
+        <h2>
+            💳 Paiement sécurisé
+        </h2>
+
+        <p>
+            Vérifiez vos informations puis effectuez votre paiement.
+        </p>
+
+        <div
+            id="paypal-button-container">
+        </div>
+
+        <button
+            type="button"
+            id="retourLivraison">
+
+            ← Modifier mes informations
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONFIRMATION
+========================================= -->
+
+<section
+    id="confirmation"
+    class="confirmation"
+    style="display:none;">
+
+    <div>
+
+        <h2>
+            ✅ Commande confirmée
+        </h2>
+
+        <p>
+            Merci pour votre commande !
+        </p>
+
+        <p>
+            Votre commande a bien été enregistrée.
+        </p>
+
+        <p>
+            Un e-mail de confirmation vous sera envoyé.
+        </p>
+
+        <p>
+            Délai de livraison estimé :
+            <strong>
+                20 jours ouvrés
+            </strong>
+        </p>
+
+        <p>
+            Numéro de commande :
+            <strong id="numeroCommande">
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
      AVIS
-========================= -->
+========================================= -->
 
 <div
     id="avisModal"
     class="avis-modal">
 
-
     <div class="avis-contenu">
-
 
         <button
             id="fermerAvis"
@@ -359,11 +639,9 @@
 
         </button>
 
-
         <h2>
             Avis clients
         </h2>
-
 
         <div class="note-grande">
 
@@ -375,11 +653,9 @@
 
         </div>
 
-
         <p>
             Basé sur 46 avis
         </p>
-
 
         <hr>
 
@@ -469,15 +745,14 @@
 
         </div>
 
-
     </div>
 
 </div>
 
 
-<!-- =========================
+<!-- =========================================
      CONTACT
-========================= -->
+========================================= -->
 
 <section
     id="contact"
@@ -497,157 +772,352 @@
 </main>
 
 
-<script>
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
+<script>
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
 
-        /* =========================
+        /* =====================================
            CONFIGURATION
-        ========================= */
+        ===================================== */
 
         const PRIX_BASE = 39.90;
-
         const PRIX_FLOCAGE = 1.00;
 
 
-        /*
-         * URL GOOGLE APPS SCRIPT
-         */
-
-        const GOOGLE_SCRIPT_URL =
-            "https://script.google.com/macros/s/AKfycbwClc1v96Ow2z8cBWEbBtzTh9BoqE0bmJXJSsq5Pfm_fR1s3E0-G-P-yVHoN1jqCmq-/exec";
+        const URL_GOOGLE_SCRIPT =
+            "https://script.google.com/macros/s/AKfycby6K7pXjRjdmvAFzD0aretefH2nNtZ8iTFK3BV9ikQ7z-gckkVOCt3dJ14yUEfNPyeV/exec";
 
 
-        /* =========================
+        /* =====================================
            ELEMENTS
-        ========================= */
-
-        const flocage =
-            document.getElementById(
-                "flocage"
-            );
-
-        const zoneFlocage =
-            document.getElementById(
-                "zoneFlocage"
-            );
-
-        const prixFinal =
-            document.getElementById(
-                "prixFinal"
-            );
-
-        const nomClient =
-            document.getElementById(
-                "nomClient"
-            );
-
-        const emailClient =
-            document.getElementById(
-                "emailClient"
-            );
+        ===================================== */
 
         const taille =
-            document.getElementById(
-                "taille"
-            );
+            document.getElementById("taille");
+
+        const flocage =
+            document.getElementById("flocage");
 
         const nomFlocage =
-            document.getElementById(
-                "nomFlocage"
-            );
+            document.getElementById("nomFlocage");
 
         const numeroFlocage =
-            document.getElementById(
-                "numeroFlocage"
-            );
+            document.getElementById("numeroFlocage");
+
+        const zoneFlocage =
+            document.getElementById("zoneFlocage");
+
+        const prixFinal =
+            document.getElementById("prixFinal");
+
+        const continuerLivraison =
+            document.getElementById("continuerLivraison");
+
+        const sectionProduit =
+            document.getElementById("produit");
+
+        const sectionLivraison =
+            document.getElementById("sectionLivraison");
+
+        const sectionPaiement =
+            document.getElementById("sectionPaiement");
+
+        const confirmation =
+            document.getElementById("confirmation");
+
+        const formLivraison =
+            document.getElementById("formLivraison");
+
+        const retourProduit =
+            document.getElementById("retourProduit");
+
+        const retourLivraison =
+            document.getElementById("retourLivraison");
 
 
-        /* =========================
+        /* =====================================
            CALCUL PRIX
-        ========================= */
+        ===================================== */
 
         function calculerPrix() {
 
-            let total =
-                PRIX_BASE;
-
+            let total = PRIX_BASE;
 
             if (
                 flocage &&
                 flocage.checked
             ) {
 
-                total +=
-                    PRIX_FLOCAGE;
+                total += PRIX_FLOCAGE;
 
             }
-
-
-            prixFinal.textContent =
-                total
-                    .toFixed(2)
-                    .replace(".", ",")
-                + " €";
-
 
             return total;
 
         }
 
 
-        /* =========================
+        function afficherPrix() {
+
+            const total =
+                calculerPrix();
+
+            const affichage =
+                total
+                    .toFixed(2)
+                    .replace(".", ",")
+                + " €";
+
+            prixFinal.textContent =
+                affichage;
+
+            const recapPrix =
+                document.getElementById(
+                    "recapPrix"
+                );
+
+            if (recapPrix) {
+
+                recapPrix.textContent =
+                    affichage;
+
+            }
+
+        }
+
+
+        /* =====================================
            FLOCCAGE
-        ========================= */
+        ===================================== */
 
-        if (flocage) {
+        flocage.addEventListener(
+            "change",
+            function () {
 
-            flocage.addEventListener(
-                "change",
-                function () {
+                if (this.checked) {
 
+                    zoneFlocage.style.display =
+                        "flex";
 
-                    if (
-                        this.checked
-                    ) {
+                } else {
 
-                        zoneFlocage.style.display =
-                            "flex";
+                    zoneFlocage.style.display =
+                        "none";
 
-                    } else {
+                    nomFlocage.value =
+                        "";
 
-                        zoneFlocage.style.display =
-                            "none";
-
-                    }
-
-
-                    calculerPrix();
+                    numeroFlocage.value =
+                        "";
 
                 }
-            );
+
+                afficherPrix();
+
+            }
+        );
+
+
+        zoneFlocage.style.display =
+            "none";
+
+
+        afficherPrix();
+
+
+        /* =====================================
+           RÉCAPITULATIF
+        ===================================== */
+
+        function mettreAJourRecap() {
+
+            const recapTaille =
+                document.getElementById(
+                    "recapTaille"
+                );
+
+            const recapFlocage =
+                document.getElementById(
+                    "recapFlocage"
+                );
+
+
+            recapTaille.textContent =
+                taille.value;
+
+
+            if (flocage.checked) {
+
+                const nom =
+                    nomFlocage.value.trim();
+
+                const numero =
+                    numeroFlocage.value.trim();
+
+                let texte =
+                    "Oui";
+
+                if (nom || numero) {
+
+                    texte =
+                        nom +
+                        (numero
+                            ? " #" + numero
+                            : "");
+
+                }
+
+                recapFlocage.textContent =
+                    texte;
+
+            } else {
+
+                recapFlocage.textContent =
+                    "Aucun";
+
+            }
+
+            afficherPrix();
 
         }
 
 
-        if (zoneFlocage) {
-
-            zoneFlocage.style.display =
-                "none";
-
-        }
+        taille.addEventListener(
+            "change",
+            mettreAJourRecap
+        );
 
 
-        calculerPrix();
+        nomFlocage.addEventListener(
+            "input",
+            mettreAJourRecap
+        );
 
 
-        /* =========================
+        numeroFlocage.addEventListener(
+            "input",
+            mettreAJourRecap
+        );
+
+
+        /* =====================================
+           OUVRIR LIVRAISON
+        ===================================== */
+
+        continuerLivraison.addEventListener(
+            "click",
+            function () {
+
+                mettreAJourRecap();
+
+                sectionProduit.style.display =
+                    "none";
+
+                sectionLivraison.style.display =
+                    "block";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* =====================================
+           RETOUR PRODUIT
+        ===================================== */
+
+        retourProduit.addEventListener(
+            "click",
+            function () {
+
+                sectionLivraison.style.display =
+                    "none";
+
+                sectionProduit.style.display =
+                    "grid";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* =====================================
+           FORMULAIRE LIVRAISON
+        ===================================== */
+
+        formLivraison.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                if (
+                    !formLivraison.checkValidity()
+                ) {
+
+                    formLivraison.reportValidity();
+
+                    return;
+
+                }
+
+
+                sectionLivraison.style.display =
+                    "none";
+
+                sectionPaiement.style.display =
+                    "block";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* =====================================
+           RETOUR INFORMATIONS
+        ===================================== */
+
+        retourLivraison.addEventListener(
+            "click",
+            function () {
+
+                sectionPaiement.style.display =
+                    "none";
+
+                sectionLivraison.style.display =
+                    "block";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* =====================================
            AVIS
-        ========================= */
+        ===================================== */
 
         const ouvrirAvis =
             document.getElementById(
@@ -665,73 +1135,36 @@ document.addEventListener(
             );
 
 
-        if (
-            ouvrirAvis &&
-            avisModal
-        ) {
+        ouvrirAvis.addEventListener(
+            "click",
+            function () {
 
-            ouvrirAvis.addEventListener(
-                "click",
-                function () {
+                avisModal.classList.add(
+                    "active"
+                );
 
-                    avisModal.classList.add(
-                        "active"
-                    );
-
-                }
-            );
-
-        }
+            }
+        );
 
 
-        if (
-            fermerAvis &&
-            avisModal
-        ) {
+        fermerAvis.addEventListener(
+            "click",
+            function () {
 
-            fermerAvis.addEventListener(
-                "click",
-                function () {
+                avisModal.classList.remove(
+                    "active"
+                );
 
-                    avisModal.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
-
-        }
+            }
+        );
 
 
-        if (avisModal) {
-
-            avisModal.addEventListener(
-                "click",
-                function (event) {
-
-                    if (
-                        event.target === avisModal
-                    ) {
-
-                        avisModal.classList.remove(
-                            "active"
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        document.addEventListener(
-            "keydown",
+        avisModal.addEventListener(
+            "click",
             function (event) {
 
                 if (
-                    event.key === "Escape" &&
-                    avisModal
+                    event.target === avisModal
                 ) {
 
                     avisModal.classList.remove(
@@ -744,9 +1177,27 @@ document.addEventListener(
         );
 
 
-        /* =========================
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    avisModal.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================
            PAYPAL
-        ========================= */
+        ===================================== */
 
         if (
             typeof paypal === "undefined"
@@ -776,16 +1227,15 @@ document.addEventListener(
             },
 
 
-            /* =========================
-               CREATION COMMANDE
-            ========================= */
+            /* =================================
+               CRÉATION COMMANDE PAYPAL
+            ================================= */
 
             createOrder:
                 function (
                     data,
                     actions
                 ) {
-
 
                     const total =
                         calculerPrix();
@@ -819,9 +1269,9 @@ document.addEventListener(
                 },
 
 
-            /* =========================
-               PAIEMENT
-            ========================= */
+            /* =================================
+               PAIEMENT ACCEPTÉ
+            ================================= */
 
             onApprove:
                 function (
@@ -829,31 +1279,86 @@ document.addEventListener(
                     actions
                 ) {
 
-
                     return actions.order
                         .capture()
                         .then(
-                            function (
+                            async function (
                                 details
                             ) {
 
 
-                                /*
-                                 * RECUPERATION
-                                 * DES INFORMATIONS
-                                 */
+                                /* =================
+                                   NUMÉRO COMMANDE
+                                ================= */
+
+                                const numeroCommande =
+                                    "SK-" +
+                                    Date.now();
+
+
+                                /* =================
+                                   INFORMATIONS
+                                ================= */
+
+                                const prenom =
+                                    document.getElementById(
+                                        "prenom"
+                                    ).value.trim();
+
 
                                 const nom =
-                                    nomClient.value.trim();
+                                    document.getElementById(
+                                        "nom"
+                                    ).value.trim();
+
 
                                 const email =
-                                    emailClient.value.trim();
+                                    document.getElementById(
+                                        "email"
+                                    ).value.trim();
 
-                                const tailleChoisie =
-                                    taille.value;
+
+                                const telephone =
+                                    document.getElementById(
+                                        "telephone"
+                                    ).value.trim();
 
 
-                                let flocageChoisi =
+                                const adresse =
+                                    document.getElementById(
+                                        "adresse"
+                                    ).value.trim();
+
+
+                                const complement =
+                                    document.getElementById(
+                                        "complement"
+                                    ).value.trim();
+
+
+                                const codePostal =
+                                    document.getElementById(
+                                        "codePostal"
+                                    ).value.trim();
+
+
+                                const ville =
+                                    document.getElementById(
+                                        "ville"
+                                    ).value.trim();
+
+
+                                const pays =
+                                    document.getElementById(
+                                        "pays"
+                                    ).value;
+
+
+                                /* =================
+                                   FLOCCAGE
+                                ================= */
+
+                                let flocageTexte =
                                     "Aucun";
 
 
@@ -861,52 +1366,64 @@ document.addEventListener(
                                     flocage.checked
                                 ) {
 
-                                    const nom =
-                                        nomFlocage.value.trim();
+                                    const nomF =
+                                        nomFlocage
+                                            .value
+                                            .trim();
 
-                                    const numero =
-                                        numeroFlocage.value.trim();
+                                    const numeroF =
+                                        numeroFlocage
+                                            .value
+                                            .trim();
+
+
+                                    flocageTexte =
+                                        nomF;
 
 
                                     if (
-                                        nom ||
-                                        numero
+                                        numeroF
                                     ) {
 
-                                        flocageChoisi =
-                                            nom +
-                                            (
-                                                numero
-                                                    ? " — " + numero
-                                                    : ""
-                                            );
+                                        flocageTexte +=
+                                            " #" +
+                                            numeroF;
+
+                                    }
+
+
+                                    if (
+                                        !flocageTexte
+                                    ) {
+
+                                        flocageTexte =
+                                            "Personnalisé";
 
                                     }
 
                                 }
 
 
-                                const total =
-                                    calculerPrix();
+                                /* =================
+                                   TOTAL
+                                ================= */
+
+                                const montant =
+                                    calculerPrix()
+                                        .toFixed(2);
 
 
-                                /*
-                                 * NUMERO COMMANDE
-                                 */
-
-                                const numeroCommande =
-                                    "SK-" +
-                                    Date.now();
-
-
-                                /*
-                                 * DONNEES
-                                 */
+                                /* =================
+                                   DONNÉES
+                                ================= */
 
                                 const commande = {
 
                                     commande:
                                         numeroCommande,
+
+                                    prenom:
+                                        prenom,
 
                                     nom:
                                         nom,
@@ -914,86 +1431,111 @@ document.addEventListener(
                                     email:
                                         email,
 
+                                    telephone:
+                                        telephone,
+
+                                    adresse:
+                                        adresse,
+
+                                    complement:
+                                        complement,
+
+                                    codePostal:
+                                        codePostal,
+
+                                    ville:
+                                        ville,
+
+                                    pays:
+                                        pays,
+
                                     taille:
-                                        tailleChoisie,
+                                        taille.value,
 
                                     flocage:
-                                        flocageChoisi,
+                                        flocageTexte,
 
                                     livraison:
-                                        "Standard",
+                                        "Standard — 20 jours ouvrés",
 
                                     montant:
-                                        total.toFixed(2),
+                                        montant + " €",
 
-                                    paypal_id:
+                                    statut:
+                                        "Paiement reçu",
+
+                                    paypalOrderId:
                                         data.orderID
 
                                 };
 
 
-                                /*
-                                 * ENVOI GOOGLE SHEETS
-                                 */
+                                /* =================
+                                   ENVOI GOOGLE SHEETS
+                                ================= */
 
-                                fetch(
-                                    GOOGLE_SCRIPT_URL,
-                                    {
+                                try {
 
-                                        method:
-                                            "POST",
+                                    await fetch(
+                                        URL_GOOGLE_SCRIPT,
+                                        {
 
-                                        mode:
-                                            "no-cors",
+                                            method:
+                                                "POST",
 
-                                        headers: {
+                                            mode:
+                                                "no-cors",
 
-                                            "Content-Type":
-                                                "text/plain;charset=utf-8"
+                                            headers: {
 
-                                        },
+                                                "Content-Type":
+                                                    "text/plain;charset=utf-8"
 
-                                        body:
-                                            JSON.stringify(
-                                                commande
-                                            )
+                                            },
 
-                                    }
-                                )
-                                .catch(
-                                    function (
-                                        error
-                                    ) {
+                                            body:
+                                                JSON.stringify(
+                                                    commande
+                                                )
 
-                                        console.error(
-                                            "Erreur Google Sheets :",
-                                            error
-                                        );
+                                        }
+                                    );
 
-                                    }
-                                );
+                                } catch (erreur) {
+
+                                    console.error(
+                                        "Erreur Google Sheets :",
+                                        erreur
+                                    );
+
+                                }
 
 
-                                /*
-                                 * CONFIRMATION
-                                 */
+                                /* =================
+                                   AFFICHAGE
+                                ================= */
 
-                                alert(
+                                sectionPaiement.style.display =
+                                    "none";
 
-                                    "Paiement effectué avec succès !\n\n" +
+                                confirmation.style.display =
+                                    "block";
 
-                                    "Commande : " +
-                                    numeroCommande +
-                                    "\n\n" +
+                                document.getElementById(
+                                    "numeroCommande"
+                                ).textContent =
+                                    numeroCommande;
 
-                                    "Merci pour votre commande SO-KIT."
 
-                                );
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: "smooth"
+                                });
 
 
                                 console.log(
-                                    "Commande PayPal :",
-                                    details
+                                    "Commande SO-KIT :",
+                                    commande
                                 );
 
 
@@ -1003,9 +1545,9 @@ document.addEventListener(
                 },
 
 
-            /* =========================
+            /* =================================
                ANNULATION
-            ========================= */
+            ================================= */
 
             onCancel:
                 function () {
@@ -1017,18 +1559,16 @@ document.addEventListener(
                 },
 
 
-            /* =========================
+            /* =================================
                ERREUR
-            ========================= */
+            ================================= */
 
             onError:
-                function (
-                    error
-                ) {
+                function (err) {
 
                     console.error(
                         "Erreur PayPal :",
-                        error
+                        err
                     );
 
                     alert(
