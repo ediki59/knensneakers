@@ -23,7 +23,6 @@
 
     <script src="https://www.paypal.com/sdk/js?client-id=AbcVKpAm89gERnzfTr4r_-N3Wv5Iv2PBHeWSxKhdKhC8z4l_2eL1R6d8euMZJy55dCIA2dLX3KVcYMmp&currency=EUR"></script>
 
-
 </head>
 
 
@@ -118,9 +117,7 @@
     id="produit">
 
 
-    <!-- =========================
-         PHOTO
-    ========================= -->
+    <!-- PHOTO -->
 
     <div class="photo">
 
@@ -131,14 +128,12 @@
     </div>
 
 
-    <!-- =========================
-         INFORMATIONS
-    ========================= -->
+    <!-- INFORMATIONS -->
 
     <div class="infos">
 
 
-        <!-- AVIS -->
+        <!-- AVIS CLIQUABLES -->
 
         <button
             class="note"
@@ -267,11 +262,11 @@
                     Livraison standard — offerte
                 </option>
 
-                <option value="3.90">
-                    Livraison express 4 jours — +3,90 €
-                </option>
-
             </select>
+
+            <small class="delai-livraison">
+                Délai de livraison estimé : 20 jours ouvrés.
+            </small>
 
         </div>
 
@@ -491,8 +486,6 @@ document.addEventListener(
 
         const prixFlocage = 1.00;
 
-        const prixLivraisonExpress = 3.90;
-
 
         /* =========================
            ELEMENTS
@@ -503,9 +496,6 @@ document.addEventListener(
 
         const zoneFlocage =
             document.getElementById("zoneFlocage");
-
-        const livraison =
-            document.getElementById("livraison");
 
         const prixFinal =
             document.getElementById("prixFinal");
@@ -528,18 +518,6 @@ document.addEventListener(
             ) {
 
                 total += prixFlocage;
-
-            }
-
-
-            /* LIVRAISON EXPRESS */
-
-            if (
-                livraison &&
-                livraison.value === "3.90"
-            ) {
-
-                total += prixLivraisonExpress;
 
             }
 
@@ -590,19 +568,13 @@ document.addEventListener(
 
 
         /* =========================
-           LIVRAISON
+           ZONE FLOCCAGE CACHÉE
         ========================= */
 
-        if (livraison) {
+        if (zoneFlocage) {
 
-            livraison.addEventListener(
-                "change",
-                function () {
-
-                    mettreAJourPrix();
-
-                }
-            );
+            zoneFlocage.style.display =
+                "none";
 
         }
 
@@ -772,19 +744,6 @@ document.addEventListener(
 
                             total +=
                                 prixFlocage;
-
-                        }
-
-
-                        /* LIVRAISON */
-
-                        if (
-                            livraison &&
-                            livraison.value === "3.90"
-                        ) {
-
-                            total +=
-                                prixLivraisonExpress;
 
                         }
 
