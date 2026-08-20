@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,9 +15,12 @@
 
     <!-- PAYPAL -->
     <script src="https://www.paypal.com/sdk/js?client-id=AbcVKpAm89gERnzfTr4r_-N3Wv5Iv2PBHeWSxKhdKhC8z4l_2eL1R6d8euMZJy55dCIA2dLX3KVcYMmp&currency=EUR"></script>
+
 </head>
 
+
 <body>
+
 
 <header class="header">
 
@@ -198,6 +202,38 @@
             <small class="delai-livraison">
                 Délai de livraison estimé : 20 jours ouvrés.
             </small>
+
+        </div>
+
+
+        <!-- =========================
+             CODE PROMO
+        ========================= -->
+
+        <div class="code-promo">
+
+            <label for="codePromo">
+                Code promo
+            </label>
+
+            <div>
+
+                <input
+                    type="text"
+                    id="codePromo"
+                    placeholder="Entrez votre code">
+
+                <button
+                    type="button"
+                    id="appliquerPromo">
+
+                    Appliquer
+
+                </button>
+
+            </div>
+
+            <small id="messagePromo"></small>
 
         </div>
 
@@ -397,6 +433,17 @@ document.addEventListener(
 
 
         /* =========================
+           CODE PROMO TEST
+        ========================= */
+
+        const CODE_PROMO_TEST = "TEST1";
+
+        const PRIX_PROMO_TEST = 1.00;
+
+        let codePromoActif = false;
+
+
+        /* =========================
            ELEMENTS
         ========================= */
 
@@ -409,6 +456,15 @@ document.addEventListener(
         const prixFinal =
             document.getElementById("prixFinal");
 
+        const codePromo =
+            document.getElementById("codePromo");
+
+        const appliquerPromo =
+            document.getElementById("appliquerPromo");
+
+        const messagePromo =
+            document.getElementById("messagePromo");
+
 
         /* =========================
            CALCUL DU TOTAL
@@ -416,16 +472,32 @@ document.addEventListener(
 
         function mettreAJourPrix() {
 
-            let total = prixBase;
+            let total;
 
-            if (
-                flocage &&
-                flocage.checked
-            ) {
 
-                total += prixFlocage;
+            if (codePromoActif) {
+
+                total =
+                    PRIX_PROMO_TEST;
+
+            } else {
+
+                total =
+                    prixBase;
+
+
+                if (
+                    flocage &&
+                    flocage.checked
+                ) {
+
+                    total +=
+                        prixFlocage;
+
+                }
 
             }
+
 
             prixFinal.textContent =
                 total
@@ -446,6 +518,7 @@ document.addEventListener(
                 "change",
                 function () {
 
+
                     if (this.checked) {
 
                         zoneFlocage.style.display =
@@ -457,6 +530,7 @@ document.addEventListener(
                             "none";
 
                     }
+
 
                     mettreAJourPrix();
 
@@ -470,6 +544,60 @@ document.addEventListener(
 
             zoneFlocage.style.display =
                 "none";
+
+        }
+
+
+        /* =========================
+           CODE PROMO
+        ========================= */
+
+        if (appliquerPromo) {
+
+            appliquerPromo.addEventListener(
+                "click",
+                function () {
+
+
+                    const code =
+                        codePromo.value
+                            .trim()
+                            .toUpperCase();
+
+
+                    if (
+                        code ===
+                        CODE_PROMO_TEST
+                    ) {
+
+
+                        codePromoActif =
+                            true;
+
+
+                        messagePromo.textContent =
+                            "Code promo accepté : prix 1,00 €.";
+
+
+                    } else {
+
+
+                        codePromoActif =
+                            false;
+
+
+                        messagePromo.textContent =
+                            code === ""
+                                ? ""
+                                : "Code promo invalide.";
+
+                    }
+
+
+                    mettreAJourPrix();
+
+                }
+            );
 
         }
 
@@ -542,7 +670,8 @@ document.addEventListener(
                 function (event) {
 
                     if (
-                        event.target === avisModal
+                        event.target ===
+                        avisModal
                     ) {
 
                         avisModal.classList.remove(
@@ -562,7 +691,8 @@ document.addEventListener(
             function (event) {
 
                 if (
-                    event.key === "Escape"
+                    event.key ===
+                    "Escape"
                 ) {
 
                     if (avisModal) {
@@ -584,7 +714,8 @@ document.addEventListener(
         ========================= */
 
         if (
-            typeof paypal !== "undefined"
+            typeof paypal !==
+            "undefined"
         ) {
 
 
@@ -592,13 +723,17 @@ document.addEventListener(
 
                 style: {
 
-                    layout: "vertical",
+                    layout:
+                        "vertical",
 
-                    color: "gold",
+                    color:
+                        "gold",
 
-                    shape: "rect",
+                    shape:
+                        "rect",
 
-                    label: "paypal"
+                    label:
+                        "paypal"
 
                 },
 
@@ -613,17 +748,32 @@ document.addEventListener(
                         actions
                     ) {
 
-                        let total =
-                            prixBase;
+
+                        let total;
 
 
                         if (
-                            flocage &&
-                            flocage.checked
+                            codePromoActif
                         ) {
 
-                            total +=
-                                prixFlocage;
+                            total =
+                                PRIX_PROMO_TEST;
+
+                        } else {
+
+                            total =
+                                prixBase;
+
+
+                            if (
+                                flocage &&
+                                flocage.checked
+                            ) {
+
+                                total +=
+                                    prixFlocage;
+
+                            }
 
                         }
 
@@ -658,7 +808,7 @@ document.addEventListener(
 
                 /* =========================
                    PAIEMENT ACCEPTÉ
-                   + ENVOI GOOGLE SHEETS
+                   + GOOGLE SHEETS
                 ========================= */
 
                 onApprove:
@@ -666,6 +816,7 @@ document.addEventListener(
                         data,
                         actions
                     ) {
+
 
                         return actions.order
                             .capture()
@@ -676,7 +827,7 @@ document.addEventListener(
 
 
                                     /* =========================
-                                       RÉCUPÉRATION INFORMATIONS
+                                       INFORMATIONS
                                     ========================= */
 
                                     const taille =
@@ -688,7 +839,8 @@ document.addEventListener(
                                     const livraison =
                                         document.getElementById(
                                             "livraison"
-                                        ).value === "0"
+                                        ).value ===
+                                        "0"
                                             ? "Standard"
                                             : document.getElementById(
                                                 "livraison"
@@ -704,10 +856,12 @@ document.addEventListener(
                                         flocage.checked
                                     ) {
 
+
                                         const nom =
                                             document.getElementById(
                                                 "nomFlocage"
                                             ).value || "";
+
 
                                         const numero =
                                             document.getElementById(
@@ -728,17 +882,31 @@ document.addEventListener(
                                        MONTANT
                                     ========================= */
 
-                                    let montant =
-                                        prixBase;
+                                    let montant;
 
 
                                     if (
-                                        flocage &&
-                                        flocage.checked
+                                        codePromoActif
                                     ) {
 
-                                        montant +=
-                                            prixFlocage;
+                                        montant =
+                                            PRIX_PROMO_TEST;
+
+                                    } else {
+
+                                        montant =
+                                            prixBase;
+
+
+                                        if (
+                                            flocage &&
+                                            flocage.checked
+                                        ) {
+
+                                            montant +=
+                                                prixFlocage;
+
+                                        }
 
                                     }
 
@@ -764,7 +932,7 @@ document.addEventListener(
 
 
                                     /* =========================
-                                       DONNÉES COMMANDE
+                                       COMMANDE
                                     ========================= */
 
                                     const commande = {
@@ -785,8 +953,14 @@ document.addEventListener(
                                             livraison,
 
                                         montant:
-                                            montant.toFixed(2) +
+                                            montant
+                                                .toFixed(2) +
                                             " €",
+
+                                        code_promo:
+                                            codePromoActif
+                                                ? CODE_PROMO_TEST
+                                                : "",
 
                                         statut:
                                             "Paiement reçu"
